@@ -19,6 +19,7 @@ Bugfix:
  - Push rules was not retrieved after a clear cache
  - m.notice messages trigger push notifications (#238)
  - Embiggen messages with multiple emojis also for edited messages (#458)
+ - Invitation notifications are not dismissed automatically if room is joined from another client (#347)
 
 Translations:
  -
