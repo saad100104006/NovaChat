@@ -52,6 +52,7 @@ import im.vector.matrix.rx.rx
 import im.vector.riotx.BuildConfig
 import im.vector.riotx.R
 import im.vector.riotx.core.extensions.postLiveEvent
+import im.vector.riotx.core.images.ImageTools
 import im.vector.riotx.core.intent.getFilenameFromUri
 import im.vector.riotx.core.platform.VectorViewModel
 import im.vector.riotx.core.resources.UserPreferencesProvider
@@ -72,6 +73,7 @@ import java.util.concurrent.TimeUnit
 class RoomDetailViewModel @AssistedInject constructor(@Assisted initialState: RoomDetailViewState,
                                                       private val userPreferencesProvider: UserPreferencesProvider,
                                                       private val vectorPreferences: VectorPreferences,
+                                                      private val imageTools: ImageTools,
                                                       private val session: Session
 ) : VectorViewModel<RoomDetailViewState>(initialState) {
 
@@ -457,7 +459,14 @@ class RoomDetailViewModel @AssistedInject constructor(@Assisted initialState: Ro
 
     private fun handleSendMedia(action: RoomDetailActions.SendMedia) {
         val attachments = action.mediaFiles.map {
-            val nameWithExtension = getFilenameFromUri(null, Uri.parse(it.path))
+            val pathWithScheme = if (it.path.startsWith("/")) {
+                "file://" + it.path
+            } else {
+                it.path
+            }
+
+            val uri = Uri.parse(pathWithScheme)
+            val nameWithExtension = getFilenameFromUri(null, uri)
 
             ContentAttachmentData(
                     size = it.size,
@@ -465,6 +474,7 @@ class RoomDetailViewModel @AssistedInject constructor(@Assisted initialState: Ro
                     date = it.date,
                     height = it.height,
                     width = it.width,
+                    exifOrientation = imageTools.getOrientationForBitmap(uri),
                     name = nameWithExtension ?: it.name,
                     path = it.path,
                     mimeType = it.mimeType,
