@@ -13,6 +13,7 @@ Other changes:
 
 Bugfix:
  - Fix issue on upload error in loop (#587)
+ - Picture uploads are unreliable, pictures are shown in wrong aspect ratio on desktop client (#517)
 
 Translations:
  -
