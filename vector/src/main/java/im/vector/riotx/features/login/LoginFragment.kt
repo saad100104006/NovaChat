@@ -92,16 +92,16 @@ class LoginFragment : VectorBaseFragment() {
     }
 
     private fun setupNotice() {
-        riotx_no_registration_notice.setTextWithColoredPart(R.string.riotx_no_registration_notice, R.string.riotx_no_registration_notice_colored_part)
+      //  riotx_no_registration_notice.setTextWithColoredPart(R.string.riotx_no_registration_notice, R.string.riotx_no_registration_notice_colored_part)
 
-        riotx_no_registration_notice.setOnClickListener {
+      /*  riotx_no_registration_notice.setOnClickListener {
             openUrlInExternalBrowser(requireActivity(), "https://about.riot.im/downloads")
-        }
+        }*/
     }
 
     private fun authenticate() {
         val login = loginField.text?.trim().toString()
-        val password = passwordField.text?.trim().toString()
+        val password = passwordContainer.text?.trim().toString()
 
         viewModel.handle(LoginActions.Login(login, password))
     }
@@ -110,7 +110,7 @@ class LoginFragment : VectorBaseFragment() {
         Observable
                 .combineLatest(
                         loginField.textChanges().map { it.trim().isNotEmpty() },
-                        passwordField.textChanges().map { it.trim().isNotEmpty() },
+                        passwordContainer.textChanges().map { it.trim().isNotEmpty() },
                         homeServerField.textChanges().map { it.trim().isNotEmpty() },
                         Function3<Boolean, Boolean, Boolean, Boolean> { isLoginNotEmpty, isPasswordNotEmpty, isHomeServerNotEmpty ->
                             isLoginNotEmpty && isPasswordNotEmpty && isHomeServerNotEmpty
@@ -140,7 +140,7 @@ class LoginFragment : VectorBaseFragment() {
     }
 
     private fun renderPasswordField() {
-        passwordField.showPassword(passwordShown)
+        passwordContainer.showPassword(passwordShown)
 
         passwordReveal.setImageResource(if (passwordShown) R.drawable.ic_eye_closed_black else R.drawable.ic_eye_black)
     }
@@ -155,7 +155,7 @@ class LoginFragment : VectorBaseFragment() {
                 loginField.isVisible = false
                 passwordContainer.isVisible = false
                 authenticateButton.isVisible = false
-                authenticateButtonSso.isVisible = false
+                authenticateButtonSso.isVisible = true
                 passwordShown = false
                 renderPasswordField()
             }
@@ -165,7 +165,7 @@ class LoginFragment : VectorBaseFragment() {
                 loginField.isVisible = false
                 passwordContainer.isVisible = false
                 authenticateButton.isVisible = false
-                authenticateButtonSso.isVisible = false
+                authenticateButtonSso.isVisible = true
                 Toast.makeText(requireActivity(), "Authenticate failure: ${state.asyncHomeServerLoginFlowRequest.error}", Toast.LENGTH_LONG).show()
             }
             is Success    -> {
@@ -177,8 +177,8 @@ class LoginFragment : VectorBaseFragment() {
                         loginField.isVisible = true
                         passwordContainer.isVisible = true
                         authenticateButton.isVisible = true
-                        authenticateButtonSso.isVisible = false
-                        if (loginField.text.isNullOrBlank() && passwordField.text.isNullOrBlank()) {
+                        authenticateButtonSso.isVisible = true
+                        if (loginField.text.isNullOrBlank() && passwordContainer.text.isNullOrBlank()) {
                             //Jump focus to login
                             loginField.requestFocus()
                         }
@@ -193,7 +193,7 @@ class LoginFragment : VectorBaseFragment() {
                         loginField.isVisible = false
                         passwordContainer.isVisible = false
                         authenticateButton.isVisible = false
-                        authenticateButtonSso.isVisible = false
+                        authenticateButtonSso.isVisible = true
                         Toast.makeText(requireActivity(), "None of the homeserver login mode is supported by RiotX", Toast.LENGTH_LONG).show()
                     }
                 }

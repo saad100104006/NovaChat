@@ -19,12 +19,14 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/logoImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/riotx_logo" />
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/circle"
+                android:layout_gravity="center_horizontal" />
+
 
             <TextView
                 android:id="@+id/riotx_no_registration_notice"
@@ -32,70 +34,58 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="32dp"
+                android:layout_marginBottom="23dp"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="@string/riotx_no_registration_notice"
-                android:textColor="?vctr_notice_secondary"
-                android:textSize="15sp" />
+                android:text="Nova Chat"
+                android:textColor="#000000"
+                android:textSize="29sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/VectorTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:hint="@string/auth_user_name_placeholder">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/loginField"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="67dp"
+                    android:hint="Username"
+                    android:paddingLeft="30dp"
+                    android:textColorHint="#7D7C7C"
+                    android:background="@drawable/button_rounded_corner"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    tools:ignore="RtlSymmetry" />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <FrameLayout
-                android:id="@+id/passwordContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/VectorTextInputLayout"
+                <EditText
+                    android:id="@+id/passwordContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/auth_password_placeholder">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:paddingEnd="48dp"
-                        android:paddingRight="48dp"
-                        tools:ignore="RtlSymmetry" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="67dp"
+                    android:hint="Password"
+                    android:textColorHint="#7D7C7C"
+                    android:paddingLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:background="@drawable/button_rounded_corner"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    tools:ignore="RtlSymmetry" />
 
                 <ImageView
                     android:id="@+id/passwordReveal"
                     android:layout_width="@dimen/layout_touch_size"
                     android:layout_height="@dimen/layout_touch_size"
                     android:layout_gravity="end"
+                    android:visibility="gone"
                     android:layout_marginTop="8dp"
                     android:background="?attr/selectableItemBackground"
                     android:scaleType="center"
                     android:src="@drawable/ic_eye_black"
                     android:tint="?attr/colorAccent" />
 
-            </FrameLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/VectorTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="16dp"
                 android:hint="@string/settings_home_server">
 
@@ -104,29 +94,63 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textUri"
+                    android:background="@drawable/button_rounded_corner"
                     android:imeOptions="actionDone"
                     android:maxLines="1" />
-
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <TextView
                 android:id="@+id/authenticateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="22dp"
-                android:text="@string/auth_login" />
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/button_rounded_corner_green"
+                android:text="@string/auth_login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/authenticateButtonSso"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="22dp"
-                android:text="@string/auth_login_sso"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:layout_marginTop="43dp">
 
+                <TextView
+                    android:id="@+id/authenticateButtonSso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="or"
+                    android:textColor="#7D7C7C"
+                    android:textSize="20sp"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/authenticateButtonSso2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="5dp"
+                    android:text="Click here"
+                    android:textColor="#FF8970"
+                    android:textSize="20sp"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/authenticateButtonSso3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="5dp"
+                    android:text="to Create a New Account"
+                    android:textColor="#7D7C7C"
+                    android:textSize="20sp"
+                    tools:visibility="visible" />
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

@@ -215,7 +215,7 @@
     <string name="error_no_external_application_found">Sorry, no external application has been found to complete this action.</string>
 
     <!-- Authentication -->
-    <string name="auth_login">Log in</string>
+    <string name="auth_login">Login</string>
     <string name="auth_login_sso">Sign in with single sign-on</string>
     <string name="auth_register">Create Account</string>
     <string name="auth_submit">Submit</string>
