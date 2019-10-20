@@ -10,15 +10,18 @@
         style="@style/VectorButtonStyleFlat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         tools:layout_gravity="center_horizontal"
         tools:text="@string/join" />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStateButtonBig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/round_accept"
         android:minWidth="120dp"
         tools:layout_gravity="center_horizontal"
         tools:layout_marginTop="40dp"

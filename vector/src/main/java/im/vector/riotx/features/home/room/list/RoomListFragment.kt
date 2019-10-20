@@ -52,9 +52,9 @@ data class RoomListParams(
 class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, OnBackPressed, FabMenuView.Listener {
 
     enum class DisplayMode(@StringRes val titleRes: Int) {
-        HOME(R.string.bottom_action_home),
-        PEOPLE(R.string.bottom_action_people_x),
-        ROOMS(R.string.bottom_action_rooms),
+        HOME(R.string.app_title),
+        PEOPLE(R.string.app_title),
+        ROOMS(R.string.app_title),
         FILTERED(/* Not used */ R.string.bottom_action_rooms)
     }
 

@@ -5,6 +5,12 @@
         <item name="android:visibility">visible</item>
     </style>
 
+    <style name="BottomNavigationViewTextStyle">
+
+        <item name="android:textSize">20sp</item>
+        ...
+    </style>
+
 
     <style name="VectorMaterialThemeDebugLight" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">#7F7F00</item>

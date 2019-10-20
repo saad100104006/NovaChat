@@ -57,7 +57,7 @@
     <color name="riotx_search_background_mobile_black">#FF181B21</color>
 
     <attr name="riotx_header_panel_background" format="color" />
-    <color name="riotx_header_panel_background_light">#FFF3F8FD</color>
+    <color name="riotx_header_panel_background_light">#FFFFFF</color>
     <color name="riotx_header_panel_background_dark">#FF22262E</color>
     <color name="riotx_header_panel_background_black">#FF090A0C</color>
 
@@ -118,7 +118,7 @@
 
     <!-- Other colors, which are not in the pallette -->
     <attr name="riotx_unread_room_badge" format="color" />
-    <color name="riotx_unread_room_badge_light">#FF61708B</color>
+    <color name="riotx_unread_room_badge_light">#0ADCAB</color>
     <color name="riotx_unread_room_badge_dark">#FF61708B</color>
     <color name="riotx_unread_room_badge_black">#FF61708B</color>
 

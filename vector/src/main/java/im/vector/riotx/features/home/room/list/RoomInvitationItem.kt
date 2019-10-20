@@ -72,9 +72,9 @@ abstract class RoomInvitationItem : VectorEpoxyModel<RoomInvitationItem.Holder>(
             }
         }
 
-        holder.rejectView.isVisible = !requestInProgress
+        //holder.rejectView.isVisible = !requestInProgress
 
-        when {
+       /* when {
             invitationRejectInError -> holder.rejectView.render(ButtonStateView.State.Error)
             else                    -> holder.rejectView.render(ButtonStateView.State.Button)
         }
@@ -87,7 +87,7 @@ abstract class RoomInvitationItem : VectorEpoxyModel<RoomInvitationItem.Holder>(
             override fun onRetryClicked() {
                 rejectListener?.invoke()
             }
-        }
+        }*/
         holder.titleView.text = roomName
         holder.subtitleView.setTextOrHide(secondLine)
         avatarRenderer.render(avatarUrl, roomId, roomName.toString(), holder.avatarImageView)
@@ -97,7 +97,7 @@ abstract class RoomInvitationItem : VectorEpoxyModel<RoomInvitationItem.Holder>(
         val titleView by bind<TextView>(R.id.roomInvitationNameView)
         val subtitleView by bind<TextView>(R.id.roomInvitationSubTitle)
         val acceptView by bind<ButtonStateView>(R.id.roomInvitationAccept)
-        val rejectView by bind<ButtonStateView>(R.id.roomInvitationReject)
+       // val rejectView by bind<ButtonStateView>(R.id.roomInvitationReject)
         val avatarImageView by bind<ImageView>(R.id.roomInvitationAvatarImageView)
         val rootView by bind<ViewGroup>(R.id.itemRoomInvitationLayout)
     }

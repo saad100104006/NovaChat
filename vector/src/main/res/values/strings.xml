@@ -3,6 +3,9 @@
     <!-- use to retrieve the supported languages list -->
     <!-- should the same value as the file name -->
 
+
+    <string name="app_title">Nova Chat</string>
+
     <string name="resources_language">en</string>
     <string name="resources_country_code">US</string>
 
@@ -1601,7 +1604,7 @@ Not all features in Riot are implemented in RiotX yet. Main missing (and coming 
 • Widgets
 • …"</string>
 
-    <string name="bottom_action_people_x">Direct Messages</string>
+    <string name="bottom_action_people_x">Chats</string>
 
     <string name="send_file_step_idle">Waiting…</string>
     <string name="send_file_step_encrypting_thumbnail">Encrypting thumbnail…</string>

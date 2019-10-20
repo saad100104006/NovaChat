@@ -18,6 +18,7 @@ package im.vector.riotx.features.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.core.view.forEachIndexed
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -30,6 +31,7 @@ import im.vector.matrix.android.api.session.crypto.keysbackup.KeysBackupState
 import im.vector.matrix.android.api.session.group.model.GroupSummary
 import im.vector.riotx.R
 import im.vector.riotx.core.di.ScreenComponent
+import im.vector.riotx.core.extensions.observeK
 import im.vector.riotx.core.platform.ToolbarConfigurable
 import im.vector.riotx.core.platform.VectorBaseFragment
 import im.vector.riotx.core.ui.views.KeysBackupBanner
@@ -38,6 +40,10 @@ import im.vector.riotx.features.home.room.list.RoomListParams
 import im.vector.riotx.features.home.room.list.UnreadCounterBadgeView
 import im.vector.riotx.features.workers.signout.SignOutViewModel
 import kotlinx.android.synthetic.main.fragment_home_detail.*
+import kotlinx.android.synthetic.main.fragment_home_detail.homeDrawerHeaderAvatarView
+import kotlinx.android.synthetic.main.fragment_home_detail.homeDrawerUserIdView
+import kotlinx.android.synthetic.main.fragment_home_detail.homeDrawerUsernameView
+import kotlinx.android.synthetic.main.fragment_home_drawer.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -56,6 +62,7 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
     @Inject lateinit var session: Session
     @Inject lateinit var homeDetailViewModelFactory: HomeDetailViewModel.Factory
     @Inject lateinit var avatarRenderer: AvatarRenderer
+
 
     override fun getLayoutResId(): Int {
         return R.layout.fragment_home_detail
@@ -80,6 +87,30 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
         viewModel.selectSubscribe(this, HomeDetailViewState::displayMode) { displayMode ->
             switchDisplayMode(displayMode)
         }
+
+        session.liveUser(session.myUserId).observeK(this) { optionalUser ->
+            val user = optionalUser?.getOrNull()
+            if (user != null) {
+                avatarRenderer.render(user.avatarUrl, user.userId, user.displayName, homeDrawerHeaderAvatarView)
+                homeDrawerUsernameView.text = user.displayName
+                homeDrawerUserIdView.text = user.userId
+            }
+        }
+
+        menu.setOnClickListener({ v ->
+            drawer.visibility = View.VISIBLE
+        })
+
+        top_layout.setOnClickListener({ v ->
+            drawer.visibility = View.GONE
+        })
+
+        settings.setOnClickListener {
+            navigator.openSettings(requireActivity())
+            drawer.visibility = View.GONE
+        }
+
+
     }
 
     private fun onGroupChange(groupSummary: GroupSummary?) {
@@ -134,6 +165,7 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
             parentActivity.configure(groupToolbar)
         }
         groupToolbar.title = ""
+        groupToolbarAvatarImageView.visibility = View.GONE
         groupToolbarAvatarImageView.setOnClickListener {
             navigationViewModel.goTo(HomeActivity.Navigation.OpenDrawer)
         }
@@ -141,12 +173,12 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
     private fun setupBottomNavigationView() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            val displayMode = when (it.itemId) {
-                R.id.bottom_action_home   -> RoomListFragment.DisplayMode.HOME
-                R.id.bottom_action_people -> RoomListFragment.DisplayMode.PEOPLE
-                R.id.bottom_action_rooms  -> RoomListFragment.DisplayMode.ROOMS
-                else                      -> RoomListFragment.DisplayMode.HOME
+            val displayMode = if (it.itemId == R.id.bottom_action_home) {
+                RoomListFragment.DisplayMode.HOME
             }
+            else if (it.itemId == R.id.bottom_action_people) RoomListFragment.DisplayMode.PEOPLE
+            else if (it.itemId == R.id.bottom_action_rooms) RoomListFragment.DisplayMode.ROOMS
+            else RoomListFragment.DisplayMode.HOME
             viewModel.switchDisplayMode(displayMode)
             true
         }
@@ -163,12 +195,36 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
     private fun switchDisplayMode(displayMode: RoomListFragment.DisplayMode) {
         groupToolbarTitleView.setText(displayMode.titleRes)
+
+        if (displayMode == RoomListFragment.DisplayMode.PEOPLE) {
+            R.id.bottom_action_people
+            one.visibility=View.INVISIBLE
+            three.visibility=View.INVISIBLE
+            two.visibility = View.VISIBLE
+        }
+        else if (displayMode == RoomListFragment.DisplayMode.ROOMS) {
+            R.id.bottom_action_rooms
+            one.visibility=View.INVISIBLE
+            two.visibility=View.INVISIBLE
+            three.visibility = View.VISIBLE
+
+        }
+        else if (displayMode == RoomListFragment.DisplayMode.HOME){
+            R.id.bottom_action_home
+            one.visibility = View.VISIBLE
+            two.visibility=View.INVISIBLE
+            three.visibility=View.INVISIBLE
+        }
         updateSelectedFragment(displayMode)
         // Update the navigation view (for when we restore the tabs)
-        bottomNavigationView.selectedItemId = when (displayMode) {
-            RoomListFragment.DisplayMode.PEOPLE -> R.id.bottom_action_people
-            RoomListFragment.DisplayMode.ROOMS  -> R.id.bottom_action_rooms
-            else                                -> R.id.bottom_action_home
+        bottomNavigationView.selectedItemId = if (displayMode == RoomListFragment.DisplayMode.PEOPLE) {
+            R.id.bottom_action_people
+        }
+        else if (displayMode == RoomListFragment.DisplayMode.ROOMS) {
+            R.id.bottom_action_rooms
+        }
+        else {
+            R.id.bottom_action_home
         }
     }
 
@@ -178,15 +234,12 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
         if (fragment == null) {
             fragment = RoomListFragment.newInstance(RoomListParams(displayMode))
         }
+
         childFragmentManager.beginTransaction()
                 .replace(R.id.roomListContainer, fragment, fragmentTag)
                 .addToBackStack(fragmentTag)
                 .commit()
     }
-
-    /* ==========================================================================================
-     * KeysBackupBanner Listener
-     * ========================================================================================== */
 
     override fun setupKeysBackup() {
         navigator.openKeysBackupSetup(requireActivity(), false)
