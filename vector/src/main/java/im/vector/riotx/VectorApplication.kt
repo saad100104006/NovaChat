@@ -183,4 +183,5 @@ class VectorApplication : Application(), HasVectorInjector, MatrixConfiguration.
         return Handler(handlerThread.looper)
     }
 
+
 }

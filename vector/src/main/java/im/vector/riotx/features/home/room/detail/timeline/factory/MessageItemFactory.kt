@@ -22,6 +22,7 @@ import android.text.TextPaint
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
+import android.util.Log
 import android.view.View
 import dagger.Lazy
 import im.vector.matrix.android.api.permalinks.MatrixLinkify
@@ -106,26 +107,38 @@ class MessageItemFactory @Inject constructor(
         }
         val attributes = messageItemAttributesFactory.create(messageContent, informationData, callback)
 
+
 //        val all = event.root.toContent()
 //        val ev = all.toModel<Event>()
-        return when (messageContent) {
-            is MessageEmoteContent  -> buildEmoteMessageItem(messageContent,
-                                                             informationData,
-                                                             highlight,
-                                                             callback,
-                                                             attributes)
-            is MessageTextContent   -> buildTextMessageItem(messageContent,
-                                                            informationData,
-                                                            highlight,
-                                                            callback,
-                                                            attributes)
-            is MessageImageContent  -> buildImageMessageItem(messageContent, informationData, highlight, callback, attributes)
-            is MessageNoticeContent -> buildNoticeMessageItem(messageContent, informationData, highlight, callback, attributes)
-            is MessageVideoContent  -> buildVideoMessageItem(messageContent, informationData, highlight, callback, attributes)
-            is MessageFileContent   -> buildFileMessageItem(messageContent, informationData, highlight, callback, attributes)
-            is MessageAudioContent  -> buildAudioMessageItem(messageContent, informationData, highlight, callback, attributes)
-            else                    -> buildNotHandledMessageItem(messageContent, highlight)
+        if (messageContent is MessageEmoteContent) return buildEmoteMessageItem(messageContent,
+                informationData,
+                highlight,
+                callback,
+                attributes)
+        else if (messageContent is MessageTextContent) {
+
+            Log.d("ooo",informationData.senderId)
+
+            if(informationData.senderId.equals("saad100104006")){
+                return buildTextMessageItem(messageContent,
+                        informationData,
+                        highlight,
+                        callback,
+                        attributes)
+            } else {
+                return buildTextMessageItem(messageContent,
+                        informationData,
+                        highlight,
+                        callback,
+                        attributes)
+            }
         }
+        else return if (messageContent is MessageImageContent) buildImageMessageItem(messageContent, informationData, highlight, callback, attributes)
+        else if (messageContent is MessageNoticeContent) buildNoticeMessageItem(messageContent, informationData, highlight, callback, attributes)
+        else if (messageContent is MessageVideoContent) buildVideoMessageItem(messageContent, informationData, highlight, callback, attributes)
+        else if (messageContent is MessageFileContent) buildFileMessageItem(messageContent, informationData, highlight, callback, attributes)
+        else if (messageContent is MessageAudioContent) buildAudioMessageItem(messageContent, informationData, highlight, callback, attributes)
+        else buildNotHandledMessageItem(messageContent, highlight)
     }
 
     private fun buildAudioMessageItem(messageContent: MessageAudioContent,

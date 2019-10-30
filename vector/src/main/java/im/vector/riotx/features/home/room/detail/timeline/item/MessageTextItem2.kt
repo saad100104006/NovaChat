@@ -24,12 +24,10 @@ import androidx.core.text.toSpannable
 import androidx.core.widget.TextViewCompat
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
-import im.vector.matrix.android.api.session.Session
 import im.vector.matrix.android.api.session.room.model.message.MessageContent
 import im.vector.matrix.android.api.session.room.timeline.getLastMessageContent
 import im.vector.riotx.R
 import im.vector.riotx.VectorApplication
-import im.vector.riotx.features.home.room.detail.RoomDetailFragment.Companion.titless
 import im.vector.riotx.features.home.room.detail.timeline.TimelineEventController
 import im.vector.riotx.features.home.room.detail.timeline.helper.MessageInformationDataFactory
 import im.vector.riotx.features.html.PillImageSpan
@@ -38,10 +36,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.saket.bettermovementmethod.BetterLinkMovementMethod
-import javax.inject.Inject
 
 @EpoxyModelClass(layout = R.layout.item_timeline_event_base)
-abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
+abstract class MessageTextItem2 : AbsMessageItem<MessageTextItem2.Holder>() {
 
     @EpoxyAttribute
     var message: CharSequence? = null
@@ -49,9 +46,6 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
     var useBigFont: Boolean = false
     @EpoxyAttribute
     var urlClickCallback: TimelineEventController.UrlClickCallback? = null
-
-    @Inject
-    lateinit var session: Session
 
     // Better link movement methods fixes the issue when
     // long pressing to open the context menu on a TextView also triggers an autoLink click.
@@ -83,25 +77,17 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
             holder.messageView.textSize = 14F
         }
 
-
         val textFuture = PrecomputedTextCompat.getTextFuture(message ?: "",
                 TextViewCompat.getTextMetricsParams(holder.messageView),
                 null)
 
         holder.messageView.setTextFuture(textFuture)
 
+        Log.d("SAAD",  STUB_ID.toString())
 
+       // val messageContent: MessageContent? = event.getLastMessageContent()
 
-        Log.d("SAAD", attributes.informationData.memberName.toString())
-
-        // val messageContent: MessageContent? = event.getLastMessageContent()
-        Log.d("ttt", holder.memberNameView.text.toString())
-
-        if (attributes.informationData.memberName.toString().equals(titless)) {
-            holder.messageView.setBackgroundResource(R.drawable.incoming)
-        } else {
-            holder.messageView.setBackgroundResource(R.drawable.out)
-        }
+        holder.messageView.setBackgroundResource(R.drawable.balloon_outgoing_normal)
         renderSendState(holder.messageView, holder.messageView)
         holder.messageView.setOnClickListener(attributes.itemClickListener)
         holder.messageView.setOnLongClickListener(attributes.itemLongClickListener)

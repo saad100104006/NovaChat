@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="5dp"
     tools:constraintSet="@layout/constraint_set_composer_layout_compact"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
@@ -15,6 +16,7 @@
         android:id="@+id/related_message_backround"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:background="?vctr_bottom_nav_background_color"
         tools:ignore="MissingConstraints" />
 
@@ -22,6 +24,7 @@
         android:id="@+id/related_message_background_top_separator"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:background="?vctr_bottom_nav_background_border_color"
         tools:ignore="MissingConstraints" />
 
@@ -29,6 +32,7 @@
         android:id="@+id/related_message_background_bottom_separator"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:background="?vctr_bottom_nav_background_border_color"
         tools:ignore="MissingConstraints" />
 
@@ -36,6 +40,7 @@
         android:id="@+id/composer_related_message_avatar_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:src="@tools:sample/avatars" />
 
@@ -81,16 +86,16 @@
         android:id="@+id/composer_avatar_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:ignore="MissingConstraints"
-        tools:src="@tools:sample/avatars" />
+        android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/attachmentButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/ic_round"
         android:contentDescription="@string/send_attachment"
-        android:src="@drawable/ic_attachment"
+        android:src="@drawable/ic_clip"
         android:tint="?attr/colorAccent"
         tools:ignore="MissingConstraints" />
 
@@ -108,7 +113,7 @@
         android:id="@+id/sendButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?android:attr/selectableItemBackground"
+        android:background="@drawable/ic_round"
         android:contentDescription="@string/send"
         android:src="@drawable/ic_send"
         android:tint="?attr/colorAccent"
@@ -116,9 +121,11 @@
 
     <EditText
         android:id="@+id/composerEditText"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+        android:layout_marginStart="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ic_border"
         android:inputType="textCapSentences|textMultiLine"
         android:nextFocusLeft="@id/composerEditText"
         android:nextFocusUp="@id/composerEditText"

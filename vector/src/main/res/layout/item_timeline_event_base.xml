@@ -24,6 +24,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
@@ -46,6 +47,7 @@
         android:layout_marginRight="8dp"
         android:ellipsize="end"
         android:maxLines="1"
+        android:visibility="gone"
         android:textColor="?riotx_text_primary"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -68,9 +70,9 @@
         android:layout_marginRight="8dp"
         android:textColor="?riotx_text_secondary"
         android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/messageMemberNameView"
+        app:layout_constraintBaseline_toBaselineOf="@id/messageContentTextStub"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/messageMemberNameView"
+        app:layout_constraintStart_toEndOf="@id/messageContentTextStub"
         tools:text="@tools:sample/date/hhmm" />
 
 
@@ -81,6 +83,7 @@
         android:layout="@layout/item_timeline_event_text_message_stub"
         tools:ignore="MissingConstraints"
         tools:visibility="visible" />
+
 
     <ViewStub
         android:id="@+id/messageContentMediaStub"

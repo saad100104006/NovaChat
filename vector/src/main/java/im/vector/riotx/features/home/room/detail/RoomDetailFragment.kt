@@ -138,11 +138,13 @@ class RoomDetailFragment :
         JumpToReadMarkerView.Callback {
 
     companion object {
-
+        lateinit var titless:String
         fun newInstance(args: RoomDetailArgs): RoomDetailFragment {
             return RoomDetailFragment().apply {
                 setArguments(args)
             }
+
+
         }
 
         /**x
@@ -440,7 +442,6 @@ class RoomDetailFragment :
 
 // PRIVATE METHODS *****************************************************************************
 
-
     private fun setupRecyclerView() {
         val epoxyVisibilityTracker = EpoxyVisibilityTracker()
         epoxyVisibilityTracker.attach(recyclerView)
@@ -692,7 +693,7 @@ class RoomDetailFragment :
             inviteView.visibility = View.GONE
             val uid = session.myUserId
             val meMember = session.getRoom(state.roomId)?.getRoomMember(uid)
-            avatarRenderer.render(meMember?.avatarUrl, uid, meMember?.displayName, composerLayout.composerAvatarImageView)
+           // avatarRenderer.render(meMember?.avatarUrl, uid, meMember?.displayName, composerLayout.composerAvatarImageView)
 
         } else if (summary?.membership == Membership.INVITE && inviter != null) {
             inviteView.visibility = View.VISIBLE
@@ -720,6 +721,8 @@ class RoomDetailFragment :
                 Timber.w("The room has been left")
                 activity?.finish()
             } else {
+
+                titless = it.displayName
                 roomToolbarTitleView.text = it.displayName
                 avatarRenderer.render(it, roomToolbarAvatarImageView)
                 roomToolbarSubtitleView.setTextOrHide(it.topic)

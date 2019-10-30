@@ -20,6 +20,7 @@
     <View
         android:id="@+id/related_message_background_top_separator"
         android:layout_width="0dp"
+        android:visibility="gone"
         android:layout_height="1dp"
         android:background="?vctr_bottom_nav_background_border_color"
         app:layout_constraintEnd_toEndOf="@id/related_message_backround"
@@ -30,6 +31,7 @@
         android:id="@+id/related_message_background_bottom_separator"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:visibility="gone"
         android:background="?vctr_bottom_nav_background_border_color"
         app:layout_constraintBottom_toBottomOf="@id/related_message_backround"
         app:layout_constraintEnd_toEndOf="@id/related_message_backround"
@@ -109,6 +111,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:visibility="gone"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
