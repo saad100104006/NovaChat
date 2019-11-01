@@ -33,6 +33,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.core.util.Pair
@@ -138,6 +139,8 @@ class RoomDetailFragment :
         JumpToReadMarkerView.Callback {
 
     companion object {
+
+        lateinit var messag: ConstraintLayout
         lateinit var titless:String
         fun newInstance(args: RoomDetailArgs): RoomDetailFragment {
             return RoomDetailFragment().apply {
