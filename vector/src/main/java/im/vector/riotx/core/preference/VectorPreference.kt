@@ -75,6 +75,9 @@ open class VectorPreference : Preference {
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
 
     init {
+           // layoutResource = R.layout.custom_settings
+
+
         // Set to false to remove the space when there is no icon
         isIconSpaceReserved = true
     }
@@ -130,7 +133,7 @@ open class VectorPreference : Preference {
                     start()
                 }
             } else {
-                itemView.setBackgroundColor(Color.TRANSPARENT)
+                //itemView.setBackgroundColor(Color.GRAY)
             }
 
         } catch (e: Exception) {
