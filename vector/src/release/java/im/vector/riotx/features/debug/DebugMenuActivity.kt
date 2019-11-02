@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package im.vector.riotx.features.debug
+package im.vector.novaChat.features.debug
 
 import androidx.appcompat.app.AppCompatActivity
 

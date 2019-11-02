@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package im.vector.riotx.push.fcm
+package im.vector.novaChat.push.fcm
 
 import android.app.Activity
 import android.content.Context
@@ -24,10 +24,10 @@ import android.widget.Toast
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.iid.FirebaseInstanceId
-import im.vector.riotx.R
-import im.vector.riotx.core.di.ActiveSessionHolder
-import im.vector.riotx.core.pushers.PushersManager
-import im.vector.riotx.features.settings.VectorPreferences
+import im.vector.novaChat.R
+import im.vector.novaChat.core.di.ActiveSessionHolder
+import im.vector.novaChat.core.pushers.PushersManager
+import im.vector.novaChat.features.settings.VectorPreferences
 import timber.log.Timber
 
 /**

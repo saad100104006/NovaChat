@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package im.vector.riotx.gplay.push.fcm
+package im.vector.novaChat.gplay.push.fcm
 
 import android.os.Handler
 import android.os.Looper
@@ -28,19 +28,19 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import im.vector.matrix.android.api.session.Session
 import im.vector.matrix.android.api.session.events.model.Event
-import im.vector.riotx.BuildConfig
-import im.vector.riotx.R
-import im.vector.riotx.core.di.ActiveSessionHolder
-import im.vector.riotx.core.extensions.vectorComponent
-import im.vector.riotx.core.preference.BingRule
-import im.vector.riotx.core.pushers.PushersManager
-import im.vector.riotx.features.badge.BadgeProxy
-import im.vector.riotx.features.notifications.NotifiableEventResolver
-import im.vector.riotx.features.notifications.NotifiableMessageEvent
-import im.vector.riotx.features.notifications.NotificationDrawerManager
-import im.vector.riotx.features.notifications.SimpleNotifiableEvent
-import im.vector.riotx.features.settings.VectorPreferences
-import im.vector.riotx.push.fcm.FcmHelper
+import im.vector.novaChat.BuildConfig
+import im.vector.novaChat.R
+import im.vector.novaChat.core.di.ActiveSessionHolder
+import im.vector.novaChat.core.extensions.vectorComponent
+import im.vector.novaChat.core.preference.BingRule
+import im.vector.novaChat.core.pushers.PushersManager
+import im.vector.novaChat.features.badge.BadgeProxy
+import im.vector.novaChat.features.notifications.NotifiableEventResolver
+import im.vector.novaChat.features.notifications.NotifiableMessageEvent
+import im.vector.novaChat.features.notifications.NotificationDrawerManager
+import im.vector.novaChat.features.notifications.SimpleNotifiableEvent
+import im.vector.novaChat.features.settings.VectorPreferences
+import im.vector.novaChat.push.fcm.FcmHelper
 import timber.log.Timber
 
 /**

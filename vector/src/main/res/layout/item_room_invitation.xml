@@ -59,7 +59,7 @@
         tools:text="@sample/matrix.json/data/message" />
 
 
-    <im.vector.riotx.core.platform.ButtonStateView
+    <im.vector.novaChat.core.platform.ButtonStateView
         android:id="@+id/roomInvitationAccept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

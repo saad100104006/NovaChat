@@ -136,6 +136,7 @@
                     android:backgroundTint="#0ADCAB" />
 
                 <TextView
+                    android:id="@+id/sign_out"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -261,7 +262,7 @@
         android:background="@color/riotx_header_panel_text_secondary_dark"
         />
 
-    <im.vector.riotx.core.ui.views.KeysBackupBanner
+    <im.vector.novaChat.core.ui.views.KeysBackupBanner
         android:id="@+id/homeKeysBackupBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -270,7 +271,7 @@
         android:minHeight="67dp" />
 
 
-    <im.vector.riotx.features.sync.widget.SyncStateView
+    <im.vector.novaChat.features.sync.widget.SyncStateView
         android:id="@+id/syncStateView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package im.vector.riotx.receivers
+package im.vector.novaChat.receivers
 
 import android.content.BroadcastReceiver
 import android.content.Context

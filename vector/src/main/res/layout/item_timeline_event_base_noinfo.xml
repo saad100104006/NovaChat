@@ -7,7 +7,7 @@
     android:addStatesFromChildren="true"
     android:background="?attr/selectableItemBackground">
 
-    <im.vector.riotx.core.platform.CheckableView
+    <im.vector.novaChat.core.platform.CheckableView
         android:id="@+id/messageSelectedBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -52,7 +52,7 @@
         android:layout="@layout/item_timeline_event_merged_header_stub"
         tools:ignore="MissingConstraints" />
 
-    <im.vector.riotx.core.ui.views.ReadReceiptsView
+    <im.vector.novaChat.core.ui.views.ReadReceiptsView
         android:id="@+id/readReceiptsView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/readMarkerView"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <im.vector.riotx.core.ui.views.ReadMarkerView
+    <im.vector.novaChat.core.ui.views.ReadMarkerView
         android:id="@+id/readMarkerView"
         android:layout_width="0dp"
         android:layout_height="2dp"

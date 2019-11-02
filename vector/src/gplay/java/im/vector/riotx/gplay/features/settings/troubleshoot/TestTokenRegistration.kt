@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package im.vector.riotx.gplay.features.settings.troubleshoot
+package im.vector.novaChat.gplay.features.settings.troubleshoot
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import im.vector.matrix.android.api.session.pushers.PusherState
-import im.vector.riotx.R
-import im.vector.riotx.core.di.ActiveSessionHolder
-import im.vector.riotx.core.pushers.PushersManager
-import im.vector.riotx.core.resources.StringProvider
-import im.vector.riotx.features.settings.troubleshoot.TroubleshootTest
-import im.vector.riotx.push.fcm.FcmHelper
+import im.vector.novaChat.R
+import im.vector.novaChat.core.di.ActiveSessionHolder
+import im.vector.novaChat.core.pushers.PushersManager
+import im.vector.novaChat.core.resources.StringProvider
+import im.vector.novaChat.features.settings.troubleshoot.TroubleshootTest
+import im.vector.novaChat.push.fcm.FcmHelper
 import javax.inject.Inject
 
 /**

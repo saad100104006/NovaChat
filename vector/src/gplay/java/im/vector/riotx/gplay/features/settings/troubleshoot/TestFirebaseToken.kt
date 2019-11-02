@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package im.vector.riotx.gplay.features.settings.troubleshoot
+package im.vector.novaChat.gplay.features.settings.troubleshoot
 
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.iid.FirebaseInstanceId
-import im.vector.riotx.R
-import im.vector.riotx.core.resources.StringProvider
-import im.vector.riotx.core.utils.startAddGoogleAccountIntent
-import im.vector.riotx.features.settings.troubleshoot.NotificationTroubleshootTestManager
-import im.vector.riotx.features.settings.troubleshoot.TroubleshootTest
-import im.vector.riotx.push.fcm.FcmHelper
+import im.vector.novaChat.R
+import im.vector.novaChat.core.resources.StringProvider
+import im.vector.novaChat.core.utils.startAddGoogleAccountIntent
+import im.vector.novaChat.features.settings.troubleshoot.NotificationTroubleshootTestManager
+import im.vector.novaChat.features.settings.troubleshoot.TroubleshootTest
+import im.vector.novaChat.push.fcm.FcmHelper
 import timber.log.Timber
 import javax.inject.Inject
 
