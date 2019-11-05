@@ -141,7 +141,6 @@ class RoomDetailFragment :
     companion object {
 
         lateinit var messag: ConstraintLayout
-        lateinit var titless:String
         fun newInstance(args: RoomDetailArgs): RoomDetailFragment {
             return RoomDetailFragment().apply {
                 setArguments(args)
@@ -725,7 +724,7 @@ class RoomDetailFragment :
                 activity?.finish()
             } else {
 
-                titless = it.displayName
+              //  titless = it.displayName
                 roomToolbarTitleView.text = it.displayName
                 avatarRenderer.render(it, roomToolbarAvatarImageView)
                 roomToolbarSubtitleView.setTextOrHide(it.topic)

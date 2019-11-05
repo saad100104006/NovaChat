@@ -2,21 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/messages"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:addStatesFromChildren="true"
-    android:background="?attr/selectableItemBackground">
-
-    <im.vector.novaChat.core.platform.CheckableView
-        android:id="@+id/messageSelectedBackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?riotx_highlighted_message_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/messageAvatarImageView"
@@ -30,13 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/messageStartGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_constraintGuide_begin="52dp" />
-
     <TextView
         android:id="@+id/messageMemberNameView"
         android:layout_width="wrap_content"
@@ -48,7 +33,6 @@
         android:layout_marginRight="8dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:visibility="gone"
         android:textColor="?riotx_text_primary"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -60,22 +44,23 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@sample/matrix.json/data/displayName" />
 
-
     <TextView
         android:id="@+id/messageTimeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:textColor="?riotx_text_secondary"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="28dp"
+        android:paddingTop="10dp"
+        android:textColor="#D94E4E4E"
         android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/messageContentTextStub"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_creator="@id/messageContentTextStub"
+        app:layout_constraintBottom_toBottomOf="@+id/messageSelectedBackground"
+        app:layout_constraintEnd_toEndOf="@+id/messageSelectedBackground"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/messageContentTextStub"
         tools:text="@tools:sample/date/hhmm" />
-
 
     <ViewStub
         android:id="@+id/messageContentTextStub"
@@ -99,6 +84,7 @@
         android:layout="@layout/item_timeline_event_file_stub"
         tools:ignore="MissingConstraints" />
 
+
     <ViewStub
         android:id="@+id/messageContentRedactedStub"
         style="@style/TimelineContentStubLayoutParams"
@@ -108,8 +94,6 @@
         android:layout="@layout/item_timeline_event_redacted_stub"
         tools:ignore="MissingConstraints" />
 
-
-    <!-- TODO: For now we show 8 reactions maximum, this will need rework when needed-->
     <ViewStub
         android:id="@+id/messageBottomInfo"
         android:layout_width="0dp"
@@ -126,6 +110,40 @@
 
     </ViewStub>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/messageStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0"
+        />
+
+
+    <!-- TODO: For now we show 8 reactions maximum, this will need rework when needed-->
+    <im.vector.novaChat.core.platform.CheckableView
+        android:id="@+id/messageSelectedBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?riotx_highlighted_message_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <im.vector.novaChat.core.ui.views.ReadMarkerView
+        android:id="@+id/readMarkerView"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:background="?attr/vctr_unread_marker_line_color"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <im.vector.novaChat.core.ui.views.ReadReceiptsView
         android:id="@+id/readReceiptsView"
         android:layout_width="wrap_content"
@@ -134,18 +152,5 @@
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/readMarkerView"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <im.vector.novaChat.core.ui.views.ReadMarkerView
-        android:id="@+id/readMarkerView"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:background="?attr/vctr_unread_marker_line_color"
-        android:layout_marginBottom="2dp"
-        android:visibility="invisible"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

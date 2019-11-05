@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -43,6 +44,7 @@ import im.vector.novaChat.features.rageshake.VectorUncaughtExceptionHandler
 import im.vector.novaChat.features.workers.signout.SignOutViewModel
 import im.vector.novaChat.push.fcm.FcmHelper
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.fragment_home_detail.*
 import kotlinx.android.synthetic.main.merge_overlay_waiting_view.*
 import timber.log.Timber
 import javax.inject.Inject
@@ -189,6 +191,8 @@ class HomeActivity : VectorBaseActivity(), ToolbarConfigurable {
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
+        } else if(drawer.visibility ==View.VISIBLE){
+            drawer.visibility =View.GONE
         } else {
             super.onBackPressed()
         }

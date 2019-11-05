@@ -61,7 +61,7 @@ class EncryptionItemFactory @Inject constructor(private val stringProvider: Stri
                 readReceiptsCallback = callback
         )
         return NoticeItem_()
-                .leftGuideline(avatarSizeProvider.leftGuideline)
+               // .leftGuideline(avatarSizeProvider.leftGuideline)
                 .highlighted(highlight)
                 .attributes(attributes)
     }

@@ -17,6 +17,7 @@
 package im.vector.novaChat.features.home.room.detail.timeline.item
 
 import android.view.*
+import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.text.PrecomputedTextCompat
@@ -26,7 +27,7 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import im.vector.matrix.android.api.session.Session
 import im.vector.novaChat.R
-import im.vector.novaChat.features.home.room.detail.RoomDetailFragment.Companion.titless
+import im.vector.novaChat.features.home.HomeDrawerFragment.Companion.titless
 import im.vector.novaChat.features.home.room.detail.timeline.TimelineEventController
 import im.vector.novaChat.features.html.PillImageSpan
 import kotlinx.coroutines.Dispatchers
@@ -83,15 +84,16 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
                 null)
 
         holder.messageView.setTextFuture(textFuture)
+        holder.messageView.gravity=Gravity.START
 
         if (attributes.informationData.memberName.toString().equals(titless)) {
-            holder.messageView.setBackgroundResource(R.drawable.incoming)
-            holder.messageViews.setMarginLeft(200)
-            holder.messageViews.setMarginRight(0)
+            holder.messageViews.setBackgroundResource(R.drawable.incoming)
+            holder.messageViews.setMarginLeft(300)
+            holder.messageViews.setMarginRight(30)
         } else {
-            holder.messageView.setBackgroundResource(R.drawable.out)
-            holder.messageViews.setMarginLeft(0)
-            holder.messageViews.setMarginRight(200)
+           holder.messageViews.setBackgroundResource(R.drawable.out)
+           holder.messageViews.setMarginLeft(30)
+            holder.messageViews.setMarginRight(300)
         }
         renderSendState(holder.messageView, holder.messageView)
         holder.messageView.setOnClickListener(attributes.itemClickListener)
@@ -138,9 +140,7 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
 
     class Holder : AbsMessageItem.Holder(STUB_ID) {
         val messageView by bind<AppCompatTextView>(R.id.messageTextView)
-
         val messageViews by bind<ConstraintLayout>(R.id.messages)
-
     }
 
     companion object {

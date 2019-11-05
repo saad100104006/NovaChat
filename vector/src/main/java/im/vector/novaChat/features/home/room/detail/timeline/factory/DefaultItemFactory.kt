@@ -43,7 +43,7 @@ class DefaultItemFactory @Inject constructor(private val avatarSizeProvider: Ava
         val informationData = informationDataFactory.create(event, null, readMarkerVisible)
 
         return DefaultItem_()
-                .leftGuideline(avatarSizeProvider.leftGuideline)
+                //.leftGuideline(avatarSizeProvider.leftGuideline)
                 .highlighted(highlight)
                 .text(text)
                 .avatarRenderer(avatarRenderer)

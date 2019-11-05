@@ -12,29 +12,9 @@
         /!\ Constraints for this layout are defined in external layout files that are used as constraint set for animation.
         /!\ These 3 files must be modified to stay coherent!
     ======================== -->
-    <View
-        android:id="@+id/related_message_backround"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:background="?vctr_bottom_nav_background_color"
-        tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/related_message_background_top_separator"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:background="?vctr_bottom_nav_background_border_color"
-        tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/related_message_background_bottom_separator"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:background="?vctr_bottom_nav_background_border_color"
-        tools:ignore="MissingConstraints" />
+
 
     <ImageView
         android:id="@+id/composer_related_message_avatar_view"
@@ -111,10 +91,12 @@
 
     <ImageButton
         android:id="@+id/sendButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/ic_round"
         android:contentDescription="@string/send"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:src="@drawable/ic_send"
         android:tint="?attr/colorAccent"
         tools:ignore="MissingConstraints" />
@@ -124,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/ic_border"
         android:inputType="textCapSentences|textMultiLine"
         android:nextFocusLeft="@id/composerEditText"

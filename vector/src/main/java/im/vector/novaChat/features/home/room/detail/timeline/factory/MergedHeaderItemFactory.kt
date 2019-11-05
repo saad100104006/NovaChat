@@ -103,7 +103,7 @@ class MergedHeaderItemFactory @Inject constructor(private val sessionHolder: Act
                 )
                 MergedHeaderItem_()
                         .id(mergeId)
-                        .leftGuideline(avatarSizeProvider.leftGuideline)
+                        //.leftGuideline(avatarSizeProvider.leftGuideline)
                         .highlighted(isCollapsed && highlighted)
                         .attributes(attributes)
                         .also {

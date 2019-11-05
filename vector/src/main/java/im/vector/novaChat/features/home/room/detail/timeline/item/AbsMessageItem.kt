@@ -85,7 +85,7 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
             }
             holder.avatarImageView.visibility = View.GONE
             holder.avatarImageView.setOnClickListener(_avatarClickListener)
-            holder.memberNameView.visibility = View.GONE
+
             holder.memberNameView.setOnClickListener(_memberNameClickListener)
             holder.timeView.visibility = View.VISIBLE
             holder.timeView.text = attributes.informationData.time
@@ -96,6 +96,7 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
                     attributes.informationData.memberName?.toString(),
                     holder.avatarImageView
             )
+
             holder.avatarImageView.setOnLongClickListener(attributes.itemLongClickListener)
             holder.memberNameView.setOnLongClickListener(attributes.itemLongClickListener)
         } else {
@@ -103,10 +104,19 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
             holder.memberNameView.setOnClickListener(null)
             holder.avatarImageView.visibility = View.GONE
             holder.memberNameView.visibility = View.GONE
-            holder.timeView.visibility = View.GONE
+            holder.timeView.text = attributes.informationData.time
+            holder.timeView.visibility = View.VISIBLE
             holder.avatarImageView.setOnLongClickListener(null)
             holder.memberNameView.setOnLongClickListener(null)
         }
+
+       /* if(attributes.informationData.readReceipts.size<2){
+            holder.memberNameView.visibility = View.GONE
+        } else {
+            holder.memberNameView.visibility = View.VISIBLE
+        }
+*/
+
         holder.view.setOnClickListener(attributes.itemClickListener)
         holder.view.setOnLongClickListener(attributes.itemLongClickListener)
 

@@ -30,7 +30,7 @@ import javax.inject.Inject
 class HomeDrawerFragment : VectorBaseFragment() {
 
     companion object {
-
+        lateinit var titless:String
         fun newInstance(): HomeDrawerFragment {
             return HomeDrawerFragment()
         }
@@ -56,6 +56,7 @@ class HomeDrawerFragment : VectorBaseFragment() {
             if (user != null) {
                 avatarRenderer.render(user.avatarUrl, user.userId, user.displayName, homeDrawerHeaderAvatarView)
                 homeDrawerUsernameView.text = user.displayName
+                titless = user.displayName.toString()
                 homeDrawerUserIdView.text = user.userId
             }
         }

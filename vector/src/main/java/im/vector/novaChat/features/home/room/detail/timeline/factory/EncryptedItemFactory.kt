@@ -68,7 +68,7 @@ class EncryptedItemFactory @Inject constructor(private val messageInformationDat
                 val informationData = messageInformationDataFactory.create(event, nextEvent, readMarkerVisible)
                 val attributes = attributesFactory.create(null, informationData, callback)
                 return MessageTextItem_()
-                        .leftGuideline(avatarSizeProvider.leftGuideline)
+                      //  .leftGuideline(avatarSizeProvider.leftGuideline)
                         .highlighted(highlight)
                         .attributes(attributes)
                         .message(spannableStr)
