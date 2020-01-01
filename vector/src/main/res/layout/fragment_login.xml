@@ -45,7 +45,7 @@
                 <EditText
                     android:id="@+id/loginField"
                     android:layout_width="match_parent"
-                    android:layout_height="67dp"
+                    android:layout_height="55dp"
                     android:hint="Username"
                     android:paddingLeft="30dp"
                     android:textColorHint="#7D7C7C"
@@ -57,7 +57,7 @@
                 <EditText
                     android:id="@+id/passwordContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="67dp"
+                    android:layout_height="55dp"
                     android:hint="Password"
                     android:textColorHint="#7D7C7C"
                     android:paddingLeft="30dp"
@@ -67,6 +67,21 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     tools:ignore="RtlSymmetry" />
+
+
+            <EditText
+                android:id="@+id/homeServerField"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Home Server"
+                android:visibility="gone"
+                android:textColorHint="#7D7C7C"
+                android:paddingLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:background="@drawable/button_rounded_corner"
+                android:maxLines="1"
+                tools:ignore="RtlSymmetry" />
 
                 <ImageView
                     android:id="@+id/passwordReveal"
@@ -80,29 +95,29 @@
                     android:src="@drawable/ic_eye_black"
                     android:tint="?attr/colorAccent" />
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/VectorTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_marginTop="16dp"
-                android:hint="@string/settings_home_server">
+    <CheckBox
+        android:id="@+id/server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/homeServerField"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textUri"
-                    android:background="@drawable/button_rounded_corner"
-                    android:imeOptions="actionDone"
-                    android:maxLines="1" />
-            </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use custom server options (advanced)"
+        />
+   </LinearLayout>
+
 
             <TextView
                 android:id="@+id/authenticateButton"
                 android:layout_width="match_parent"
-                android:layout_height="67dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -115,6 +130,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="43dp">
 
                 <TextView

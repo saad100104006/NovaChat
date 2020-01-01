@@ -80,6 +80,16 @@ class LoginFragment : VectorBaseFragment() {
             return@setOnEditorActionListener false
         }
 
+
+        server.setOnClickListener(View.OnClickListener {
+            if (server.isChecked) {
+                homeServerField.visibility=View.VISIBLE
+            } else {
+                homeServerField.visibility=View.GONE
+            }
+        })
+
+
         val initHsUrl = viewModel.getInitialHomeServerUrl()
         if (initHsUrl != null) {
             homeServerField.setText(initHsUrl)
@@ -90,11 +100,11 @@ class LoginFragment : VectorBaseFragment() {
     }
 
     private fun setupNotice() {
-      //  riotx_no_registration_notice.setTextWithColoredPart(R.string.riotx_no_registration_notice, R.string.riotx_no_registration_notice_colored_part)
+        //  riotx_no_registration_notice.setTextWithColoredPart(R.string.riotx_no_registration_notice, R.string.riotx_no_registration_notice_colored_part)
 
-      /*  riotx_no_registration_notice.setOnClickListener {
-            openUrlInExternalBrowser(requireActivity(), "https://about.riot.im/downloads")
-        }*/
+        /*  riotx_no_registration_notice.setOnClickListener {
+              openUrlInExternalBrowser(requireActivity(), "https://about.riot.im/downloads")
+          }*/
     }
 
     private fun authenticate() {
@@ -215,4 +225,5 @@ class LoginFragment : VectorBaseFragment() {
             is Success -> Unit
         }
     }
+
 }
