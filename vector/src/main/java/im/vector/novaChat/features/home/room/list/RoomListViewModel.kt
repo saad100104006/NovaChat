@@ -214,7 +214,7 @@ class RoomListViewModel @AssistedInject constructor(@Assisted initialState: Room
                 }
 
         val roomComparator = when (displayMode) {
-            RoomListFragment.DisplayMode.HOME     -> chronologicalRoomComparator
+           // RoomListFragment.DisplayMode.HOME     -> chronologicalRoomComparator
             RoomListFragment.DisplayMode.PEOPLE   -> chronologicalRoomComparator
             RoomListFragment.DisplayMode.ROOMS    -> chronologicalRoomComparator
             RoomListFragment.DisplayMode.FILTERED -> chronologicalRoomComparator

@@ -85,13 +85,14 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
 
         holder.messageView.setTextFuture(textFuture)
         holder.messageView.gravity=Gravity.START
+        holder.messageView.setText(R.color.white)
 
         if (attributes.informationData.memberName.toString().equals(titless)) {
-            holder.messageViews.setBackgroundResource(R.drawable.incoming)
+            holder.messageViews.setBackgroundResource(R.drawable.ic_outgoing_new)
             holder.messageViews.setMarginLeft(300)
             holder.messageViews.setMarginRight(30)
         } else {
-           holder.messageViews.setBackgroundResource(R.drawable.out)
+           holder.messageViews.setBackgroundResource(R.drawable.ic_incoming_new)
            holder.messageViews.setMarginLeft(30)
             holder.messageViews.setMarginRight(300)
         }

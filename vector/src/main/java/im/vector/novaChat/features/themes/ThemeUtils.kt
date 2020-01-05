@@ -175,7 +175,7 @@ object ThemeUtils {
 
         return when (theme) {
             THEME_LIGHT_VALUE -> resourceId
-            THEME_DARK_VALUE  -> {
+           /* THEME_DARK_VALUE  -> {
                 return when (resourceId) {
                     R.drawable.bg_search_edit_text_light     -> R.drawable.bg_search_edit_text_dark
                     R.drawable.bg_unread_notification_light  -> R.drawable.bg_unread_notification_dark
@@ -185,8 +185,8 @@ object ThemeUtils {
                         resourceId
                     }
                 }
-            }
-            THEME_BLACK_VALUE -> {
+            }*/
+           /* THEME_BLACK_VALUE -> {
                 return when (resourceId) {
                     R.drawable.bg_search_edit_text_light     -> R.drawable.bg_search_edit_text_black
                     R.drawable.bg_unread_notification_light  -> R.drawable.bg_unread_notification_black
@@ -196,7 +196,7 @@ object ThemeUtils {
                         resourceId
                     }
                 }
-            }
+            }*/
             else              -> {
                 Timber.w("Warning, missing theme: $theme")
                 resourceId

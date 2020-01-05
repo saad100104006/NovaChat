@@ -55,10 +55,8 @@ import kotlinx.android.synthetic.main.fragment_home_detail.homeDrawerUsernameVie
 import timber.log.Timber
 import javax.inject.Inject
 
-
-private const val INDEX_CATCHUP = 0
-private const val INDEX_PEOPLE = 1
-private const val INDEX_ROOMS = 2
+private const val INDEX_PEOPLE = 0
+private const val INDEX_ROOMS = 1
 
 class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
@@ -236,12 +234,15 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
     private fun setupBottomNavigationView() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            val displayMode = if (it.itemId == R.id.bottom_action_home) {
-                RoomListFragment.DisplayMode.HOME
+            val displayMode = if (it.itemId == R.id.bottom_action_people) {
+                RoomListFragment.DisplayMode.PEOPLE
+            } else {
+                RoomListFragment.DisplayMode.ROOMS
             }
-            else if (it.itemId == R.id.bottom_action_people) RoomListFragment.DisplayMode.PEOPLE
-            else if (it.itemId == R.id.bottom_action_rooms) RoomListFragment.DisplayMode.ROOMS
-            else RoomListFragment.DisplayMode.HOME
+            // if (it.itemId == R.id.bottom_action_people) RoomListFragment.DisplayMode.PEOPLE
+             if (it.itemId == R.id.bottom_action_rooms) RoomListFragment.DisplayMode.ROOMS
+             else  RoomListFragment.DisplayMode.PEOPLE
+           /* else RoomListFragment.DisplayMode.HOME*/
             viewModel.switchDisplayMode(displayMode)
             true
         }
@@ -261,33 +262,29 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
         if (displayMode == RoomListFragment.DisplayMode.PEOPLE) {
             R.id.bottom_action_people
-            one.visibility=View.INVISIBLE
-            three.visibility=View.INVISIBLE
-            two.visibility = View.VISIBLE
+            one.visibility=View.VISIBLE
+           // three.visibility=View.INVISIBLE
+            two.visibility = View.INVISIBLE
         }
         else if (displayMode == RoomListFragment.DisplayMode.ROOMS) {
             R.id.bottom_action_rooms
             one.visibility=View.INVISIBLE
-            two.visibility=View.INVISIBLE
-            three.visibility = View.VISIBLE
+            two.visibility=View.VISIBLE
+           // three.visibility = View.VISIBLE
 
-        }
-        else if (displayMode == RoomListFragment.DisplayMode.HOME){
-            R.id.bottom_action_home
-            one.visibility = View.VISIBLE
-            two.visibility=View.INVISIBLE
-            three.visibility=View.INVISIBLE
         }
         updateSelectedFragment(displayMode)
         // Update the navigation view (for when we restore the tabs)
-        bottomNavigationView.selectedItemId = if (displayMode == RoomListFragment.DisplayMode.PEOPLE) {
+        bottomNavigationView.selectedItemId =
+
+          /*      if (displayMode == RoomListFragment.DisplayMode.PEOPLE) {
             R.id.bottom_action_people
-        }
-        else if (displayMode == RoomListFragment.DisplayMode.ROOMS) {
+        }*/
+         if (displayMode == RoomListFragment.DisplayMode.ROOMS) {
             R.id.bottom_action_rooms
         }
         else {
-            R.id.bottom_action_home
+            R.id.bottom_action_people
         }
     }
 
@@ -314,7 +311,7 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
 
     override fun invalidate() = withState(viewModel) {
         Timber.v(it.toString())
-        unreadCounterBadgeViews[INDEX_CATCHUP].render(UnreadCounterBadgeView.State(it.notificationCountCatchup, it.notificationHighlightCatchup))
+       // unreadCounterBadgeViews[INDEX_CATCHUP].render(UnreadCounterBadgeView.State(it.notificationCountCatchup, it.notificationHighlightCatchup))
         unreadCounterBadgeViews[INDEX_PEOPLE].render(UnreadCounterBadgeView.State(it.notificationCountPeople, it.notificationHighlightPeople))
         unreadCounterBadgeViews[INDEX_ROOMS].render(UnreadCounterBadgeView.State(it.notificationCountRooms, it.notificationHighlightRooms))
         syncStateView.render(it.syncState)

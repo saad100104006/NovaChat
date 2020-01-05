@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="start"
     android:gravity="start"
-    android:textColor="?riotx_text_primary"
+    android:textColor="@color/white"
     android:textSize="14sp"
     tools:text="@sample/matrix.json/data/message" />
 

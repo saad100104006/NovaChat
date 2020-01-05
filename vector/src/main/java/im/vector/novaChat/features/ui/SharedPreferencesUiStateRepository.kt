@@ -29,9 +29,9 @@ class SharedPreferencesUiStateRepository @Inject constructor(private val sharedP
 
     override fun getDisplayMode(): RoomListFragment.DisplayMode {
         return when (sharedPreferences.getInt(KEY_DISPLAY_MODE, VALUE_DISPLAY_MODE_CATCHUP)) {
-            VALUE_DISPLAY_MODE_PEOPLE -> RoomListFragment.DisplayMode.PEOPLE
+           // VALUE_DISPLAY_MODE_PEOPLE -> RoomListFragment.DisplayMode.PEOPLE
             VALUE_DISPLAY_MODE_ROOMS  -> RoomListFragment.DisplayMode.ROOMS
-            else                      -> RoomListFragment.DisplayMode.HOME
+            else                      -> RoomListFragment.DisplayMode.PEOPLE
         }
     }
 

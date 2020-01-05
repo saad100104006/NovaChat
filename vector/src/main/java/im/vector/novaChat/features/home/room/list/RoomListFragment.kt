@@ -52,7 +52,7 @@ data class RoomListParams(
 class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, OnBackPressed, FabMenuView.Listener {
 
     enum class DisplayMode(@StringRes val titleRes: Int) {
-        HOME(R.string.app_title),
+       // HOME(R.string.app_title),
         PEOPLE(R.string.app_title),
         ROOMS(R.string.app_title),
         FILTERED(/* Not used */ R.string.bottom_action_rooms)
@@ -100,9 +100,9 @@ class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, O
 
     private fun setupCreateRoomButton() {
         when (roomListParams.displayMode) {
-            DisplayMode.HOME     -> createChatFabMenu.isVisible = true
-            DisplayMode.PEOPLE   -> createChatRoomButton.isVisible = true
-            DisplayMode.ROOMS    -> createGroupRoomButton.isVisible = true
+           // DisplayMode.HOME     -> createChatFabMenu.isVisible = true
+            DisplayMode.PEOPLE   -> createChatRoomButton.isVisible = false
+            DisplayMode.ROOMS    -> createGroupRoomButton.isVisible = false
             DisplayMode.FILTERED -> Unit // No button in this mode
         }
 
@@ -126,7 +126,7 @@ class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, O
                             RecyclerView.SCROLL_STATE_DRAGGING,
                             RecyclerView.SCROLL_STATE_SETTLING -> {
                                 when (roomListParams.displayMode) {
-                                    DisplayMode.HOME     -> createChatFabMenu.hide()
+                                    //DisplayMode.HOME     -> createChatFabMenu.hide()
                                     DisplayMode.PEOPLE   -> createChatRoomButton.hide()
                                     DisplayMode.ROOMS    -> createGroupRoomButton.hide()
                                     DisplayMode.FILTERED -> Unit
@@ -166,7 +166,7 @@ class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, O
     private val showFabRunnable = Runnable {
         if (isAdded) {
             when (roomListParams.displayMode) {
-                DisplayMode.HOME     -> createChatFabMenu.show()
+               // DisplayMode.HOME     -> createChatFabMenu.show()
                 DisplayMode.PEOPLE   -> createChatRoomButton.show()
                 DisplayMode.ROOMS    -> createGroupRoomButton.show()
                 DisplayMode.FILTERED -> Unit
@@ -200,7 +200,7 @@ class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, O
                 }
                 .isNullOrEmpty()
         val emptyState = when (roomListParams.displayMode) {
-            DisplayMode.HOME     -> {
+           /* DisplayMode.HOME     -> {
                 if (hasNoRoom) {
                     StateView.State.Empty(
                             getString(R.string.room_list_catchup_welcome_title),
@@ -213,7 +213,7 @@ class RoomListFragment : VectorBaseFragment(), RoomSummaryController.Listener, O
                             ContextCompat.getDrawable(requireContext(), R.drawable.ic_noun_party_popper),
                             getString(R.string.room_list_catchup_empty_body))
                 }
-            }
+            }*/
             DisplayMode.PEOPLE   ->
                 StateView.State.Empty(
                         getString(R.string.room_list_people_empty_title),

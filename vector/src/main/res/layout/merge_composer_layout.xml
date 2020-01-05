@@ -5,16 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
+    android:background="@color/black"
     tools:constraintSet="@layout/constraint_set_composer_layout_compact"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
-
-    <!-- ========================
-        /!\ Constraints for this layout are defined in external layout files that are used as constraint set for animation.
-        /!\ These 3 files must be modified to stay coherent!
-    ======================== -->
-
-
-
 
     <ImageView
         android:id="@+id/composer_related_message_avatar_view"
@@ -29,7 +22,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/composer_related_message_preview"
         tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
         tools:text="@tools:sample/first_names"
         tools:visibility="gone" />
 
@@ -72,11 +67,11 @@
         android:id="@+id/attachmentButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:background="@drawable/ic_round"
+        android:padding="15dp"
+        android:layout_margin="15dp"
         android:contentDescription="@string/send_attachment"
-        android:src="@drawable/ic_clip"
-        android:tint="?attr/colorAccent"
+        android:background="@drawable/ic_attachment"
+        android:backgroundTint="@color/white"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -93,12 +88,12 @@
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_round"
         android:contentDescription="@string/send"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:src="@drawable/ic_send"
-        android:tint="?attr/colorAccent"
+        android:layout_margin="15dp"
+        android:background="@drawable/ic_send"
+        android:tint="@color/white"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -107,14 +102,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:background="@drawable/ic_border"
         android:inputType="textCapSentences|textMultiLine"
         android:nextFocusLeft="@id/composerEditText"
         android:nextFocusUp="@id/composerEditText"
         android:padding="8dp"
-        android:textColor="?vctr_message_text_color"
+        android:textColor="@color/white"
         android:textSize="14sp"
-        tools:hint="@string/room_message_placeholder_not_encrypted"
+        tools:hint="Type a message here ..."
+        android:textColorHint="@color/white"
         tools:ignore="MissingConstraints" />
 
 </merge>

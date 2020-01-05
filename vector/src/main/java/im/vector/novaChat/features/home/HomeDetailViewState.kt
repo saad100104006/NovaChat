@@ -24,7 +24,7 @@ import im.vector.novaChat.features.home.room.list.RoomListFragment
 
 data class HomeDetailViewState(
         val groupSummary: Option<GroupSummary> = Option.empty(),
-        val displayMode: RoomListFragment.DisplayMode = RoomListFragment.DisplayMode.HOME,
+        val displayMode: RoomListFragment.DisplayMode = RoomListFragment.DisplayMode.PEOPLE,
         val notificationCountCatchup: Int = 0,
         val notificationHighlightCatchup: Boolean = false,
         val notificationCountPeople: Int = 0,

@@ -96,7 +96,7 @@ class RoomSummaryController @Inject constructor(private val stringProvider: Stri
         } else {
             summaries.map { it.notificationCount }.sumBy { i -> i }
         }
-        val showHighlighted = summaries.any { it.highlightCount > 0 }
+     /*   val showHighlighted = summaries.any { it.highlightCount > 0 }
         roomCategoryItem {
             id(titleRes)
             title(stringProvider.getString(titleRes).toUpperCase())
@@ -107,7 +107,7 @@ class RoomSummaryController @Inject constructor(private val stringProvider: Stri
                 mutateExpandedState()
                 setData(viewState)
             }
-        }
+        }*/
     }
 
     private fun buildRoomModels(summaries: List<RoomSummary>,

@@ -6,9 +6,8 @@
     </style>
 
     <style name="BottomNavigationViewTextStyle">
-
+        <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">20sp</item>
-        ...
     </style>
 
 

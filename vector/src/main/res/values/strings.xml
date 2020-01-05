@@ -127,7 +127,7 @@
     <string name="bottom_action_home">Home</string>
     <string name="bottom_action_favourites">Favourites</string>
     <string name="bottom_action_people">People</string>
-    <string name="bottom_action_rooms">Rooms</string>
+    <string name="bottom_action_rooms">GROUPS</string>
     <string name="bottom_action_groups">Communities</string>
 
     <!-- Home screen -->
@@ -505,7 +505,7 @@
     <string name="room_two_users_are_typing">%1$s &#038; %2$s are typing…</string>
     <string name="room_many_users_are_typing">%1$s &#038; %2$s &#038; others are typing…</string>
     <string name="room_message_placeholder_encrypted">Send an encrypted message…</string>
-    <string name="room_message_placeholder_not_encrypted">Send a message (unencrypted)…</string>
+    <string name="room_message_placeholder_not_encrypted">Type message here…</string>
     <string name="room_message_placeholder_reply_to_encrypted">Send an encrypted reply…</string>
     <string name="room_message_placeholder_reply_to_not_encrypted">Send a reply (unencrypted)…</string>
     <string name="room_offline_notification">Connectivity to the server has been lost.</string>
@@ -1604,7 +1604,7 @@ Not all features in Riot are implemented in RiotX yet. Main missing (and coming 
 • Widgets
 • …"</string>
 
-    <string name="bottom_action_people_x">Chats</string>
+    <string name="bottom_action_people_x">CHATS</string>
 
     <string name="send_file_step_idle">Waiting…</string>
     <string name="send_file_step_encrypting_thumbnail">Encrypting thumbnail…</string>

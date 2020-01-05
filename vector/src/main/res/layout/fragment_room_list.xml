@@ -5,7 +5,7 @@
     android:id="@+id/stateView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?riotx_header_panel_background">
+    android:background="@color/black">
 
     <com.airbnb.epoxy.EpoxyRecyclerView
         android:id="@+id/roomListEpoxyRecyclerView"
@@ -19,8 +19,7 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         app:layoutDescription="@xml/motion_scene_fab_menu"
-        tools:showPaths="true"
-        tools:visibility="visible" />
+        tools:showPaths="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/createChatRoomButton"
@@ -36,8 +35,7 @@
         android:src="@drawable/ic_fab_add_chat"
         android:visibility="gone"
         app:maxImageSize="34dp"
-        tools:layout_marginEnd="80dp"
-        tools:visibility="visible" />
+        tools:layout_marginEnd="80dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/createGroupRoomButton"
@@ -50,9 +48,8 @@
         android:accessibilityTraversalBefore="@+id/roomListEpoxyRecyclerView"
         android:contentDescription="@string/a11y_create_room"
         android:src="@drawable/ic_fab_add_room"
-        android:visibility="gone"
         app:maxImageSize="32dp"
         tools:layout_marginEnd="144dp"
-        tools:visibility="visible" />
+        android:visibility="gone" />
 
 </im.vector.novaChat.core.platform.StateView>
