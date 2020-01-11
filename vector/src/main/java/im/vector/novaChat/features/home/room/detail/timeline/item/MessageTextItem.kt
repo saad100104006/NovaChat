@@ -77,7 +77,7 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
         if (useBigFont) {
             holder.messageView.textSize = 44F
         } else {
-            holder.messageView.textSize = 14F
+            holder.messageView.textSize = 18F
         }
         val textFuture = PrecomputedTextCompat.getTextFuture(message ?: "",
                 TextViewCompat.getTextMetricsParams(holder.messageView),
@@ -89,12 +89,21 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
 
         if (attributes.informationData.memberName.toString().equals(titless)) {
             holder.messageViews.setBackgroundResource(R.drawable.ic_outgoing_new)
-            holder.messageViews.setMarginLeft(300)
+            if(holder.messageView.text.length<25){
+                holder.messageViews.setMarginLeft(250)
+            } else{
+                holder.messageViews.setMarginLeft(100)
+            }
+
             holder.messageViews.setMarginRight(30)
         } else {
            holder.messageViews.setBackgroundResource(R.drawable.ic_incoming_new)
            holder.messageViews.setMarginLeft(30)
-            holder.messageViews.setMarginRight(300)
+            if(holder.messageView.text.length<25){
+                holder.messageViews.setMarginRight(250)
+            } else{
+                holder.messageViews.setMarginRight(100)
+            }
         }
         renderSendState(holder.messageView, holder.messageView)
         holder.messageView.setOnClickListener(attributes.itemClickListener)

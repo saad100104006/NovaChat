@@ -7,7 +7,7 @@
     android:layout_gravity="start"
     android:gravity="start"
     android:textColor="@color/white"
-    android:textSize="14sp"
+    android:textSize="18sp"
     tools:text="@sample/matrix.json/data/message" />
 
 
