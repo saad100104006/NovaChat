@@ -19,6 +19,8 @@ package im.vector.novaChat.features
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import im.vector.matrix.android.api.Matrix
@@ -77,6 +79,8 @@ class MainActivity : VectorBaseActivity() {
         } else {
             start()
         }
+
+        setStatusBarTransparent()
     }
 
     private fun doCleanUp(clearCache: Boolean, clearCredentials: Boolean) {
@@ -138,5 +142,14 @@ class MainActivity : VectorBaseActivity() {
         }
         startActivity(intent)
         finish()
+    }
+
+    fun setStatusBarTransparent() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+        val decorView = window.decorView
+        val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        decorView.systemUiVisibility = uiOptions
     }
 }

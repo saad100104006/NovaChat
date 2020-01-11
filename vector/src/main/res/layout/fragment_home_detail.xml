@@ -221,6 +221,7 @@
         app:menu="@menu/home_bottom_navigation" />
 
     <ImageView
+        android:id="@+id/settings_dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/homeKeysBackupBanner"
@@ -242,8 +243,8 @@
         <ImageView
             android:id="@+id/one"
             android:layout_width="0dp"
-            android:layout_weight=".15"
-            android:layout_marginStart="18dp"
+            android:layout_weight=".18"
+            android:layout_marginStart="11dp"
 
             android:layout_height="wrap_content"
             android:background="@drawable/ic_white_line"
@@ -253,8 +254,8 @@
         <ImageView
             android:id="@+id/two"
             android:layout_width="0dp"
-            android:layout_weight=".19"
-            android:layout_marginStart="30dp"
+            android:layout_weight=".21"
+            android:layout_marginStart="11dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/one"
             android:background="@drawable/ic_white_line"

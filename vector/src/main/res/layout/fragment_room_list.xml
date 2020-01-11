@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
+        android:background="@color/black"
         app:layoutDescription="@xml/motion_scene_fab_menu"
         tools:showPaths="true" />
 
@@ -33,6 +34,7 @@
         android:contentDescription="@string/a11y_create_direct_message"
         android:scaleType="center"
         android:src="@drawable/ic_fab_add_chat"
+        app:backgroundTint="@color/black"
         android:visibility="gone"
         app:maxImageSize="34dp"
         tools:layout_marginEnd="80dp" />

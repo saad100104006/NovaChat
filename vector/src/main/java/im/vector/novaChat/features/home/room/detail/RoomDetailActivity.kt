@@ -19,6 +19,8 @@ package im.vector.novaChat.features.home.room.detail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 import im.vector.novaChat.R
 import im.vector.novaChat.core.extensions.replaceFragment
@@ -41,6 +43,8 @@ class RoomDetailActivity : VectorBaseActivity(), ToolbarConfigurable {
             val roomDetailFragment = RoomDetailFragment.newInstance(roomDetailArgs)
             replaceFragment(roomDetailFragment, R.id.roomDetailContainer)
         }
+
+        setStatusBarTransparent()
     }
 
     override fun configure(toolbar: Toolbar) {
@@ -59,5 +63,15 @@ class RoomDetailActivity : VectorBaseActivity(), ToolbarConfigurable {
 
 
     }
+
+    fun setStatusBarTransparent() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+        val decorView = window.decorView
+        val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        decorView.systemUiVisibility = uiOptions
+    }
+
 
 }

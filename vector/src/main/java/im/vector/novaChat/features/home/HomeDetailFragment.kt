@@ -16,6 +16,7 @@
 
 package im.vector.novaChat.features.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +47,7 @@ import im.vector.novaChat.features.home.room.list.RoomListFragment
 import im.vector.novaChat.features.home.room.list.RoomListParams
 import im.vector.novaChat.features.home.room.list.UnreadCounterBadgeView
 import im.vector.novaChat.features.notifications.NotificationDrawerManager
+import im.vector.novaChat.features.settings.VectorSettingsActivity
 import im.vector.novaChat.features.workers.signout.SignOutBottomSheetDialogFragment
 import im.vector.novaChat.features.workers.signout.SignOutViewModel
 import kotlinx.android.synthetic.main.fragment_home_detail.*
@@ -114,6 +116,11 @@ class HomeDetailFragment : VectorBaseFragment(), KeysBackupBanner.Delegate {
                 homeDrawerUserIdView.text = user.userId
             }
         }
+
+        settings_dot.setOnClickListener({ v ->
+            val intent = VectorSettingsActivity.getIntent(context!!, "TODO")
+            context!!.startActivity(intent)
+        })
 
         menu.setOnClickListener({ v ->
             drawer.visibility = View.VISIBLE

@@ -108,9 +108,13 @@ import im.vector.novaChat.features.media.VideoMediaViewerActivity
 import im.vector.novaChat.features.notifications.NotificationDrawerManager
 import im.vector.novaChat.features.reactions.EmojiReactionPickerActivity
 import im.vector.novaChat.features.settings.VectorPreferences
+import im.vector.novaChat.features.settings.VectorSettingsActivity
 import im.vector.novaChat.features.themes.ThemeUtils
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.synthetic.main.fragment_home_detail.*
 import kotlinx.android.synthetic.main.fragment_room_detail.*
+import kotlinx.android.synthetic.main.fragment_room_detail.settings_dot
+import kotlinx.android.synthetic.main.fragment_room_detail.syncStateView
 import kotlinx.android.synthetic.main.merge_composer_layout.view.*
 import kotlinx.android.synthetic.main.merge_overlay_waiting_view.*
 import org.commonmark.parser.Parser
@@ -273,6 +277,11 @@ class RoomDetailFragment :
         roomDetailViewModel.selectSubscribe(RoomDetailViewState::syncState) { syncState ->
             syncStateView.render(syncState)
         }
+
+        settings_dot.setOnClickListener({ v ->
+            val intent = VectorSettingsActivity.getIntent(context!!, "TODO")
+            context!!.startActivity(intent)
+        })
     }
 
     override fun onDestroy() {

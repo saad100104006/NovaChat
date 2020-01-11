@@ -77,7 +77,7 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
         if (useBigFont) {
             holder.messageView.textSize = 44F
         } else {
-            holder.messageView.textSize = 18F
+            holder.messageView.textSize = 23F
         }
         val textFuture = PrecomputedTextCompat.getTextFuture(message ?: "",
                 TextViewCompat.getTextMetricsParams(holder.messageView),

@@ -17,6 +17,8 @@ package im.vector.novaChat.features.settings
 
 import android.content.Context
 import android.content.Intent
+import android.view.View
+import android.view.WindowManager
 import androidx.fragment.app.FragmentManager
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -51,6 +53,8 @@ class VectorSettingsActivity : VectorBaseActivity(),
 
     override fun initUiAndData() {
         configureToolbar(settingsToolbar)
+
+        setStatusBarTransparent()
 
         if (isFirstCreation()) {
             val vectorSettingsPreferencesFragment = VectorSettingsRootFragment.newInstance()
@@ -121,5 +125,12 @@ class VectorSettingsActivity : VectorBaseActivity(),
                 }
 
         private const val FRAGMENT_TAG = "VectorSettingsPreferencesFragment"
+    }
+    fun setStatusBarTransparent() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        val decorView = window.decorView
+        val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        decorView.systemUiVisibility = uiOptions
     }
 }
