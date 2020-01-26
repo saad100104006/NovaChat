@@ -42,7 +42,7 @@
         android:minHeight="16dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="10sp"
         tools:background="@drawable/bg_unread_highlight"
         tools:text="24" />
