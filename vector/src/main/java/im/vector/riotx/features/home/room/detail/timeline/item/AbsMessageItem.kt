@@ -70,7 +70,7 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
                 height = attributes.avatarSize
                 width = attributes.avatarSize
             }
-            holder.avatarImageView.visibility = View.VISIBLE
+            holder.avatarImageView.visibility = View.GONE
             holder.avatarImageView.setOnClickListener(_avatarClickListener)
             holder.memberNameView.visibility = View.VISIBLE
             holder.memberNameView.setOnClickListener(_memberNameClickListener)

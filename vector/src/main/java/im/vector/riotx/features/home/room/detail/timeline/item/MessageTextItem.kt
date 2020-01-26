@@ -49,7 +49,7 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
         if (useBigFont) {
             holder.messageView.textSize = 44F
         } else {
-            holder.messageView.textSize = 14F
+            holder.messageView.textSize = 23F
         }
 
         if (attributes.informationData.memberName.toString().equals(HomeDrawerFragment.titless)) {

@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/messages"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:padding="5dp"
     android:addStatesFromChildren="true"
-    android:background="?attr/selectableItemBackground">
+    android:background="@color/black">
 
     <im.vector.riotx.core.platform.CheckableView
         android:id="@+id/messageSelectedBackground"
@@ -21,6 +24,7 @@
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
+        android:visibility="gone"
         android:layout_marginTop="4dp"
         tools:src="@tools:sample/avatars" />
 
