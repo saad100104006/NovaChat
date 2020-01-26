@@ -140,7 +140,8 @@ class NotificationAreaView @JvmOverloads constructor(
     private fun renderConnectionError() {
         visibility = View.VISIBLE
         imageView.setImageResource(R.drawable.error)
-        messageView.setTextColor(ContextCompat.getColor(context, R.color.vector_fuchsia_color))
+        messageView.setTextColor(Color.WHITE)
+      //  messageView.setTextColor(ContextCompat.getColor(context, R.color.vector_fuchsia_color))
         messageView.text = SpannableString(resources.getString(R.string.room_offline_notification))
     }
 
@@ -148,13 +149,17 @@ class NotificationAreaView @JvmOverloads constructor(
         visibility = View.VISIBLE
         imageView.setImageResource(R.drawable.vector_typing)
         messageView.text = SpannableString(state.message)
-        messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
+        //messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
+        messageView.setTextColor(Color.WHITE)
+
     }
 
     private fun renderUnreadPreview() {
         visibility = View.VISIBLE
         imageView.setImageResource(R.drawable.scrolldown)
-        messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
+       // messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
+
+        messageView.setTextColor(Color.WHITE)
         imageView.setOnClickListener { delegate?.closeScreen() }
     }
 
@@ -162,11 +167,13 @@ class NotificationAreaView @JvmOverloads constructor(
         visibility = View.VISIBLE
         if (state.unreadCount > 0) {
             imageView.setImageResource(R.drawable.newmessages)
-            messageView.setTextColor(ContextCompat.getColor(context, R.color.vector_fuchsia_color))
+            messageView.setTextColor(Color.WHITE)
+          //  messageView.setTextColor(ContextCompat.getColor(context, R.color.vector_fuchsia_color))
             messageView.text = SpannableString(resources.getQuantityString(R.plurals.room_new_messages_notification, state.unreadCount, state.unreadCount))
         } else {
             imageView.setImageResource(R.drawable.scrolldown)
-            messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
+            messageView.setTextColor(Color.WHITE)
+          //  messageView.setTextColor(ThemeUtils.getColor(context, R.attr.vctr_room_notification_text_color))
             if (!state.message.isNullOrEmpty()) {
                 messageView.text = SpannableString(state.message)
             }

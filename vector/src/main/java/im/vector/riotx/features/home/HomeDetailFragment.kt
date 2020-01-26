@@ -37,6 +37,7 @@ import im.vector.riotx.core.ui.views.KeysBackupBanner
 import im.vector.riotx.features.home.room.list.RoomListFragment
 import im.vector.riotx.features.home.room.list.RoomListParams
 import im.vector.riotx.features.home.room.list.UnreadCounterBadgeView
+import im.vector.riotx.features.settings.VectorSettingsActivity
 import im.vector.riotx.features.workers.signout.SignOutViewModel
 import kotlinx.android.synthetic.main.fragment_home_detail.*
 import timber.log.Timber
@@ -136,8 +137,10 @@ class HomeDetailFragment @Inject constructor(
 
             }
 
-    /*        if (it.itemId == R.id.bottom_action_rooms) RoomListDisplayMode.ROOMS
-            else RoomListDisplayMode.PEOPLE*/
+            settings_dot.setOnClickListener {
+                val intent = VectorSettingsActivity.getIntent(context!!, 0)
+                context!!.startActivity(intent)
+            }
 
             viewModel.handle(HomeDetailAction.SwitchDisplayMode(displayMode))
             true
@@ -151,6 +154,8 @@ class HomeDetailFragment @Inject constructor(
             itemView.addView(badgeLayout)
             unreadCounterBadgeViews.add(index, unreadCounterBadgeView)
         }
+
+
     }
 
     private fun switchDisplayMode(displayMode: RoomListDisplayMode) {

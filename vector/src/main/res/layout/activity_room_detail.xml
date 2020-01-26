@@ -22,6 +22,14 @@
 
             <include layout="@layout/merge_overlay_waiting_view" />
 
+            <FrameLayout
+                android:id="@+id/splash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                />
+
+
         </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

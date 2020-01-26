@@ -15,6 +15,7 @@
  */
 package im.vector.riotx.features.settings.troubleshoot
 
+import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -67,13 +68,15 @@ class NotificationTroubleshootRecyclerViewAdapter(val tests: ArrayList<Troublesh
 
         fun bind(test: TroubleshootTest) {
             val context = itemView.context
-            titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_primary))
-            descriptionText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
+           // titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_primary))
 
+            titleText.setTextColor(Color.WHITE)
+          //  descriptionText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
+            descriptionText.setTextColor(Color.WHITE)
             when (test.status) {
                 TroubleshootTest.TestStatus.NOT_STARTED -> {
-                    titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
-
+                   // titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
+                    titleText.setTextColor(Color.WHITE)
                     progressBar.visibility = View.INVISIBLE
                     statusIconImage.visibility = View.VISIBLE
                     statusIconImage.setImageResource(R.drawable.unit_test)
@@ -92,6 +95,7 @@ class NotificationTroubleshootRecyclerViewAdapter(val tests: ArrayList<Troublesh
                     }
 
                     descriptionText.setTextColor(ContextCompat.getColor(context, R.color.riotx_notice))
+
                 }
                 TroubleshootTest.TestStatus.SUCCESS     -> {
                     progressBar.visibility = View.INVISIBLE

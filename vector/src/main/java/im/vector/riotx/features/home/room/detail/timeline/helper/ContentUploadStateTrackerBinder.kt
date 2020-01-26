@@ -16,6 +16,7 @@
 
 package im.vector.riotx.features.home.room.detail.timeline.helper
 
+import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
@@ -92,7 +93,9 @@ private class ContentMediaProgressUpdater(private val progressLayout: ViewGroup,
             progressBar?.isIndeterminate = true
             progressBar?.progress = 0
             progressTextView?.text = progressLayout.context.getString(R.string.send_file_step_idle)
-            progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.UNSENT))
+           // progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.UNSENT))
+            progressTextView?.setTextColor(Color.WHITE)
+
         } else {
             progressLayout.isVisible = false
         }
@@ -120,7 +123,8 @@ private class ContentMediaProgressUpdater(private val progressLayout: ViewGroup,
         val progressTextView = progressLayout.findViewById<TextView>(R.id.mediaProgressTextView)
         progressBar?.isIndeterminate = true
         progressTextView?.text = progressLayout.context.getString(resId)
-        progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.ENCRYPTING))
+       // progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.ENCRYPTING))
+        progressTextView?.setTextColor(Color.WHITE)
     }
 
     private fun doHandleProgress(resId: Int, current: Long, total: Long) {
@@ -134,7 +138,8 @@ private class ContentMediaProgressUpdater(private val progressLayout: ViewGroup,
         progressTextView?.text = progressLayout.context.getString(resId,
                 TextUtils.formatFileSize(progressLayout.context, current, true),
                 TextUtils.formatFileSize(progressLayout.context, total, true))
-        progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.SENDING))
+       // progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.SENDING))
+        progressTextView?.setTextColor(Color.WHITE)
     }
 
     private fun handleFailure(state: ContentUploadStateTracker.State.Failure) {
@@ -143,7 +148,8 @@ private class ContentMediaProgressUpdater(private val progressLayout: ViewGroup,
         val progressTextView = progressLayout.findViewById<TextView>(R.id.mediaProgressTextView)
         progressBar?.isVisible = false
         progressTextView?.text = errorFormatter.toHumanReadable(state.throwable)
-        progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.UNDELIVERED))
+       // progressTextView?.setTextColor(colorProvider.getMessageTextColor(SendState.UNDELIVERED))
+        progressTextView?.setTextColor(Color.WHITE)
     }
 
     private fun handleSuccess() {

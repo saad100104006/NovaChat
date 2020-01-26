@@ -170,6 +170,11 @@
         <item name="iconifiedByDefault">false</item>
     </style>
 
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="VectorSearches.EditText" parent="Widget.AppCompat.EditText">
         <item name="android:textCursorDrawable">@drawable/searches_cursor_background</item>
         <item name="android:background">@android:color/transparent</item>

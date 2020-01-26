@@ -20,6 +20,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -114,6 +116,8 @@ class HomeActivity : VectorBaseActivity(), ToolbarConfigurable {
                 waiting_view.isVisible = true
             }
         })
+
+        setStatusBarTransparent()
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -191,5 +195,14 @@ class HomeActivity : VectorBaseActivity(), ToolbarConfigurable {
                         putExtra(EXTRA_CLEAR_EXISTING_NOTIFICATION, clearNotification)
                     }
         }
+    }
+
+    fun setStatusBarTransparent() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+        val decorView = window.decorView
+        val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        decorView.systemUiVisibility = uiOptions
     }
 }

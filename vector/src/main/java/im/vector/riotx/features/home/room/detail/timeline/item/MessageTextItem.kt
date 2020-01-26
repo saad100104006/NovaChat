@@ -46,11 +46,21 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
     override fun bind(holder: Holder) {
         super.bind(holder)
         holder.messageView.movementMethod = movementMethod
+
+
         if (useBigFont) {
             holder.messageView.textSize = 44F
         } else {
             holder.messageView.textSize = 23F
         }
+
+        val textFuture = PrecomputedTextCompat.getTextFuture(
+                message ?: "",
+                TextViewCompat.getTextMetricsParams(holder.messageView),
+                null)
+        holder.messageView.setTextFuture(textFuture)
+        holder.messageView.gravity= Gravity.START
+        holder.messageView.setTextColor(Color.WHITE)
 
         if (attributes.informationData.memberName.toString().equals(HomeDrawerFragment.titless)) {
             holder.messageViews.setBackgroundResource(R.drawable.ic_outgoing_new)
@@ -71,22 +81,12 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
             }
         }
 
-
-
-
         renderSendState(holder.messageView, holder.messageView)
         holder.messageView.setOnClickListener(attributes.itemClickListener)
         holder.messageView.setOnLongClickListener(attributes.itemLongClickListener)
         if (searchForPills) {
             message?.findPillsAndProcess(coroutineScope) { it.bind(holder.messageView) }
         }
-        val textFuture = PrecomputedTextCompat.getTextFuture(
-                message ?: "",
-                TextViewCompat.getTextMetricsParams(holder.messageView),
-                null)
-        holder.messageView.setTextFuture(textFuture)
-        holder.messageView.gravity= Gravity.START
-        holder.messageView.setTextColor(Color.WHITE)
     }
 
     fun View.setMarginLeft(leftMargin: Int) {

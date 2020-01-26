@@ -16,6 +16,7 @@
 
 package im.vector.riotx.features.home.room.detail.timeline.item
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.view.View
 import android.view.ViewGroup
@@ -135,6 +136,8 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
         root.isClickable = attributes.informationData.sendState.isSent()
        // val state = if (attributes.informationData.hasPendingEdits) SendState.UNSENT else attributes.informationData.sendState
       //  textView?.setTextColor(attributes.colorProvider.getMessageTextColor(state))
+
+        textView?.setTextColor(Color.WHITE)
         failureIndicator?.isVisible = attributes.informationData.sendState.hasFailed()
     }
 

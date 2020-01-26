@@ -16,6 +16,7 @@
 
 package im.vector.riotx.features.home.room.list
 
+import android.graphics.Color
 import android.view.View
 import im.vector.matrix.android.api.session.Session
 import im.vector.matrix.android.api.session.events.model.EventType
@@ -106,7 +107,9 @@ class RoomSummaryItemFactory @Inject constructor(private val noticeEventFormatte
                 if (roomSummary.isDirect.not()) {
                     span {
                         text = senderName
-                        textColor = colorProvider.getColorFromAttribute(R.attr.riotx_text_primary)
+                       // textColor = colorProvider.getColorFromAttribute(R.attr.riotx_text_primary)
+                        textColor = Color.WHITE
+
                     }
                             .append(" - ")
                             .append(message)

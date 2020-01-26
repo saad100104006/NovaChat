@@ -88,14 +88,12 @@
             android:layout_gravity="bottom|end"
             android:src="@drawable/ic_fab_add_chat"
             android:visibility="invisible"
-            motion:backgroundTint="#FFFFFF"
             motion:fabCustomSize="48dp"
             motion:layout_constraintBottom_toBottomOf="@+id/createRoomButton"
             motion:layout_constraintEnd_toEndOf="@+id/createRoomButton"
             motion:layout_constraintStart_toStartOf="@+id/createRoomButton"
             motion:layout_constraintTop_toTopOf="@+id/createRoomButton"
-            motion:maxImageSize="29dp"
-            motion:tint="@color/black" />
+            motion:maxImageSize="29dp" />
 
         <Constraint
             android:id="@+id/createRoomItemChatLabel"
@@ -167,13 +165,11 @@
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="25dp"
             android:src="@drawable/ic_fab_add_chat"
-            motion:backgroundTint="#000000"
             motion:fabCustomSize="48dp"
             motion:layout_constraintBottom_toTopOf="@+id/createRoomButton"
             motion:layout_constraintEnd_toEndOf="@+id/createRoomButton"
             motion:layout_constraintStart_toStartOf="@+id/createRoomButton"
-            motion:maxImageSize="29dp"
-            motion:tint="@color/white" />
+            motion:maxImageSize="29dp" />
 
         <Constraint
             android:id="@+id/createRoomItemChatLabel"
