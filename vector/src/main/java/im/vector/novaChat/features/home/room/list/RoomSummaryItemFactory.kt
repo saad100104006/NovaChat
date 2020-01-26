@@ -16,6 +16,7 @@
 
 package im.vector.novaChat.features.home.room.list
 
+import android.graphics.Color
 import im.vector.matrix.android.api.session.events.model.EventType
 import im.vector.matrix.android.api.session.events.model.toModel
 import im.vector.matrix.android.api.session.room.model.Membership
@@ -103,7 +104,7 @@ class RoomSummaryItemFactory @Inject constructor(private val noticeEventFormatte
                 if (roomSummary.isDirect.not() && senderName != null) {
                     span {
                         text = senderName
-                        textColor = colorProvider.getColorFromAttribute(R.attr.riotx_text_primary)
+                        textColor = Color.WHITE
                     }
                             .append(" - ")
                             .append(message)

@@ -19,6 +19,7 @@ package im.vector.novaChat.features.home.room.detail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
@@ -26,6 +27,7 @@ import im.vector.novaChat.R
 import im.vector.novaChat.core.extensions.replaceFragment
 import im.vector.novaChat.core.platform.ToolbarConfigurable
 import im.vector.novaChat.core.platform.VectorBaseActivity
+import kotlinx.android.synthetic.main.activity_room_detail.*
 import kotlinx.android.synthetic.main.merge_overlay_waiting_view.*
 
 class RoomDetailActivity : VectorBaseActivity(), ToolbarConfigurable {
@@ -45,6 +47,14 @@ class RoomDetailActivity : VectorBaseActivity(), ToolbarConfigurable {
         }
 
         setStatusBarTransparent()
+
+        Handler().postDelayed({
+            // This method will be executed once the timer is over
+            // Start your app main activity
+
+            splash.visibility = View.GONE
+            // close this activity
+        }, 300)
     }
 
     override fun configure(toolbar: Toolbar) {

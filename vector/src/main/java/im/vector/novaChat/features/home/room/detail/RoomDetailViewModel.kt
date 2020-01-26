@@ -98,7 +98,7 @@ class RoomDetailViewModel @AssistedInject constructor(@Assisted initialState: Ro
 
     companion object : MvRxViewModelFactory<RoomDetailViewModel, RoomDetailViewState> {
 
-        const val PAGINATION_COUNT = 50
+        const val PAGINATION_COUNT = 7
 
         @JvmStatic
         override fun create(viewModelContext: ViewModelContext, state: RoomDetailViewState): RoomDetailViewModel? {

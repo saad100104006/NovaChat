@@ -15,6 +15,7 @@
  */
 package im.vector.novaChat.features.settings.troubleshoot
 
+import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -68,12 +69,12 @@ class NotificationTroubleshootRecyclerViewAdapter(val tests: ArrayList<Troublesh
         fun bind(test: TroubleshootTest) {
 
             val context = itemView.context
-            titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_primary))
-            descriptionText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
+            titleText.setTextColor(Color.WHITE)
+            descriptionText.setTextColor(Color.WHITE)
 
             when (test.status) {
                 TroubleshootTest.TestStatus.NOT_STARTED -> {
-                    titleText.setTextColor(ThemeUtils.getColor(context, R.attr.riotx_text_secondary))
+                    titleText.setTextColor(Color.WHITE)
 
                     progressBar.visibility = View.INVISIBLE
                     statusIconImage.visibility = View.VISIBLE
@@ -93,7 +94,7 @@ class NotificationTroubleshootRecyclerViewAdapter(val tests: ArrayList<Troublesh
                         statusIconImage.imageTintList = null
                     }
 
-                    descriptionText.setTextColor(ContextCompat.getColor(context, R.color.riotx_notice))
+                    descriptionText.setTextColor(Color.WHITE)
                 }
                 TroubleshootTest.TestStatus.SUCCESS     -> {
                     progressBar.visibility = View.INVISIBLE

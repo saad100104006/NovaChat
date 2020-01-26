@@ -18,6 +18,7 @@
 
 package im.vector.novaChat.features.home.room.detail.timeline.helper
 
+import android.graphics.Color
 import im.vector.matrix.android.api.session.Session
 import im.vector.matrix.android.api.session.events.model.EventType
 import im.vector.matrix.android.api.session.room.timeline.TimelineEvent
@@ -60,7 +61,7 @@ class MessageInformationDataFactory @Inject constructor(private val session: Ses
         val avatarUrl = event.senderAvatar
         val memberName = event.getDisambiguatedDisplayName()
         val formattedMemberName = span(memberName) {
-            textColor = colorProvider.getColor(getColorFromUserId(event.root.senderId ?: ""))
+            textColor = Color.WHITE
         }
 
         val displayReadMarker = readMarkerVisible && event.hasReadMarker

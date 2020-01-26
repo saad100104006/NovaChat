@@ -16,6 +16,7 @@
 
 package im.vector.novaChat.features.home.room.detail.timeline.item
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
 import android.view.View
@@ -109,6 +110,8 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
             holder.avatarImageView.setOnLongClickListener(null)
             holder.memberNameView.setOnLongClickListener(null)
         }
+        holder.memberNameView.setTextColor(Color.WHITE)
+
 
        /* if(attributes.informationData.readReceipts.size<2){
             holder.memberNameView.visibility = View.GONE

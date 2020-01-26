@@ -20,6 +20,7 @@ import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
@@ -379,7 +380,7 @@ class RoomDetailFragment :
         //switch to expanded bar
         composerLayout.composerRelatedMessageTitle.apply {
             text = event.getDisambiguatedDisplayName()
-            setTextColor(ContextCompat.getColor(requireContext(), getColorFromUserId(event.root.senderId)))
+            setTextColor(Color.WHITE)
         }
 
         val messageContent: MessageContent? = event.getLastMessageContent()

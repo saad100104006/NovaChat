@@ -3,11 +3,11 @@
 
     <!-- Error colors -->
     <color name="vector_success_color">#70BF56</color>
-    <color name="vector_warning_color">#ff4b55</color>
-    <color name="vector_error_color">#ff4b55</color>
+    <color name="vector_warning_color">#ffffff</color>
+    <color name="vector_error_color">#ffffff</color>
 
     <!-- main app colors -->
-    <color name="vector_fuchsia_color">#ff4b55</color>
+    <color name="vector_fuchsia_color">#ffffff</color>
     <color name="vector_silver_color">#FFC7C7C7</color>
     <color name="vector_dark_grey_color">#FF999999</color>
 
@@ -125,9 +125,9 @@
     <color name="button_disabled_text_color">#FF7F7F7F</color>
 
     <!-- Link color -->
-    <color name="link_color_light">#368BD6</color>
-    <color name="link_color_dark">#368BD6</color>
-    <color name="link_color_status">#368BD6</color>
+    <color name="link_color_light">#ffffff</color>
+    <color name="link_color_dark">#ffffff</color>
+    <color name="link_color_status">#ffffff</color>
 
     <!-- Notification (do not depends on theme -->
     <color name="notification_accent_color">#368BD6</color>

@@ -16,6 +16,7 @@
 
 package im.vector.novaChat.features.home.room.detail.timeline.item
 
+import android.graphics.Color
 import android.view.*
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatTextView
@@ -85,7 +86,7 @@ abstract class MessageTextItem : AbsMessageItem<MessageTextItem.Holder>() {
 
         holder.messageView.setTextFuture(textFuture)
         holder.messageView.gravity=Gravity.START
-        holder.messageView.setText(R.color.white)
+        holder.messageView.setTextColor(Color.WHITE)
 
         if (attributes.informationData.memberName.toString().equals(titless)) {
             holder.messageViews.setBackgroundResource(R.drawable.ic_outgoing_new)
