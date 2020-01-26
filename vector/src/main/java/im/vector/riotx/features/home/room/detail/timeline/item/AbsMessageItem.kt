@@ -133,8 +133,8 @@ abstract class AbsMessageItem<H : AbsMessageItem.Holder> : BaseEventItem<H>() {
 
     protected open fun renderSendState(root: View, textView: TextView?, failureIndicator: ImageView? = null) {
         root.isClickable = attributes.informationData.sendState.isSent()
-        val state = if (attributes.informationData.hasPendingEdits) SendState.UNSENT else attributes.informationData.sendState
-        textView?.setTextColor(attributes.colorProvider.getMessageTextColor(state))
+       // val state = if (attributes.informationData.hasPendingEdits) SendState.UNSENT else attributes.informationData.sendState
+      //  textView?.setTextColor(attributes.colorProvider.getMessageTextColor(state))
         failureIndicator?.isVisible = attributes.informationData.sendState.hasFailed()
     }
 

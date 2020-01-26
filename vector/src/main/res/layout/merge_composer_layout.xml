@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/black"
     tools:constraintSet="@layout/constraint_set_composer_layout_compact"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
@@ -44,7 +46,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/composer_related_message_preview"
         tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
         tools:text="@tools:sample/first_names"
         tools:visibility="gone" />
 
@@ -71,7 +75,7 @@
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:background="?android:attr/selectableItemBackground"
-        android:contentDescription="@string/cancel"
+        android:contentDescription="@string/action_close"
         android:src="@drawable/ic_close_round"
         android:tint="@color/riotx_notice"
         tools:ignore="MissingConstraints" />
@@ -81,17 +85,18 @@
         android:id="@+id/composer_avatar_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:ignore="MissingConstraints"
-        tools:src="@tools:sample/avatars" />
+        android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/attachmentButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:contentDescription="@string/option_send_files"
-        android:src="@drawable/ic_attachment"
-        android:tint="?attr/colorAccent"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/send_attachment"
+        android:background="@drawable/ic_attachment"
+        android:backgroundTint="@color/white"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -106,26 +111,31 @@
 
     <ImageButton
         android:id="@+id/sendButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?android:attr/selectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/send"
-        android:src="@drawable/ic_send"
-        android:tint="?attr/colorAccent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/ic_send"
+        android:tint="@color/white"
         tools:ignore="MissingConstraints" />
 
     <im.vector.riotx.features.home.room.detail.composer.ComposerEditText
         android:id="@+id/composerEditText"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:inputType="textCapSentences|textMultiLine"
         android:nextFocusLeft="@id/composerEditText"
         android:nextFocusUp="@id/composerEditText"
         android:padding="8dp"
-        android:textColor="?vctr_message_text_color"
-        android:textSize="14sp"
-        tools:hint="@string/room_message_placeholder_not_encrypted"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        tools:hint="Type a message here ..."
+        android:textColorHint="@color/white"
         tools:ignore="MissingConstraints" />
 
 </merge>

@@ -33,6 +33,12 @@ class HomeDrawerFragment @Inject constructor(
         private val avatarRenderer: AvatarRenderer
 ) : VectorBaseFragment() {
 
+
+    companion object {
+        lateinit var titless:String
+    }
+
+
     override fun getLayoutResId() = R.layout.fragment_home_drawer
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,6 +51,7 @@ class HomeDrawerFragment @Inject constructor(
             if (user != null) {
                 avatarRenderer.render(user.toMatrixItem(), homeDrawerHeaderAvatarView)
                 homeDrawerUsernameView.text = user.displayName
+                titless = user.displayName.toString()
                 homeDrawerUserIdView.text = user.userId
             }
         }

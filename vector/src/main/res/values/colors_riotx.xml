@@ -4,25 +4,25 @@
     <!-- Source: https://zpl.io/aBKw9Mk -->
 
     <!-- Accents -->
-    <color name="riotx_accent">#FF03B381</color>
+    <color name="riotx_accent">#FFFFFF</color>
     <color name="riotx_accent_alpha25">#3F03B381</color>
 
-    <color name="riotx_notice">#FFFF4B55</color>
+    <color name="riotx_notice">#ffffff</color>
     <color name="riotx_notice_secondary">#FF61708B</color>
-    <color name="riotx_links">#FF368BD6</color>
+    <color name="riotx_links">#ffffff</color>
 
     <color name="riotx_avatar_fill_1">#FF03b381</color>
     <color name="riotx_avatar_fill_2">#FF368bd6</color>
     <color name="riotx_avatar_fill_3">#FFac3ba8</color>
 
-    <color name="riotx_username_1">#368bd6</color>
-    <color name="riotx_username_2">#ac3ba8</color>
-    <color name="riotx_username_3">#03b381</color>
-    <color name="riotx_username_4">#e64f7a</color>
-    <color name="riotx_username_5">#ff812d</color>
-    <color name="riotx_username_6">#2dc2c5</color>
-    <color name="riotx_username_7">#5c56f5</color>
-    <color name="riotx_username_8">#74d12c</color>
+    <color name="riotx_username_1">#ffffff</color>
+    <color name="riotx_username_2">#ffffff</color>
+    <color name="riotx_username_3">#ffffff</color>
+    <color name="riotx_username_4">#ffffff</color>
+    <color name="riotx_username_5">#ffffff</color>
+    <color name="riotx_username_6">#ffffff</color>
+    <color name="riotx_username_7">#ffffff</color>
+    <color name="riotx_username_8">#ffffff</color>
 
     <!-- Other usefull color -->
     <color name="black">#FF000000</color>
@@ -58,7 +58,7 @@
     <color name="riotx_search_background_mobile_black">#FF181B21</color>
 
     <attr name="riotx_header_panel_background" format="color" />
-    <color name="riotx_header_panel_background_light">#FFF3F8FD</color>
+    <color name="riotx_header_panel_background_light">#FFFFFF</color>
     <color name="riotx_header_panel_background_dark">#FF22262E</color>
     <color name="riotx_header_panel_background_black">#FF090A0C</color>
 
@@ -119,7 +119,7 @@
 
     <!-- Other colors, which are not in the pallette -->
     <attr name="riotx_unread_room_badge" format="color" />
-    <color name="riotx_unread_room_badge_light">#FF61708B</color>
+    <color name="riotx_unread_room_badge_light">#FFFFFF</color>
     <color name="riotx_unread_room_badge_dark">#FF61708B</color>
     <color name="riotx_unread_room_badge_black">#FF61708B</color>
 
