@@ -167,13 +167,13 @@
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="25dp"
             android:src="@drawable/ic_fab_add_chat"
-            motion:backgroundTint="#FFFFFF"
+            motion:backgroundTint="#000000"
             motion:fabCustomSize="48dp"
             motion:layout_constraintBottom_toTopOf="@+id/createRoomButton"
             motion:layout_constraintEnd_toEndOf="@+id/createRoomButton"
             motion:layout_constraintStart_toStartOf="@+id/createRoomButton"
             motion:maxImageSize="29dp"
-            motion:tint="@color/black" />
+            motion:tint="@color/white" />
 
         <Constraint
             android:id="@+id/createRoomItemChatLabel"
