@@ -2,16 +2,16 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:key="SETTINGS_NOTIFICATIONS_KEY"
         android:title="@string/settings_notifications">
 
-        <im.vector.riotx.core.preference.VectorSwitchPreference
+        <im.vector.novaChat.core.preference.VectorSwitchPreference
             android:defaultValue="true"
             android:key="SETTINGS_ENABLE_ALL_NOTIF_PREFERENCE_KEY"
             android:title="@string/settings_enable_all_notif" />
 
-        <im.vector.riotx.core.preference.VectorSwitchPreference
+        <im.vector.novaChat.core.preference.VectorSwitchPreference
             android:defaultValue="true"
             android:dependency="SETTINGS_ENABLE_ALL_NOTIF_PREFERENCE_KEY"
             android:key="SETTINGS_ENABLE_THIS_DEVICE_PREFERENCE_KEY"
@@ -22,7 +22,7 @@
         <!--android:key="SETTINGS_TURN_SCREEN_ON_PREFERENCE_KEY"-->
         <!--android:title="@string/settings_turn_screen_on" />-->
 
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:dependency="SETTINGS_ENABLE_THIS_DEVICE_PREFERENCE_KEY"
             android:enabled="false"
             android:key="SETTINGS_NOTIFICATION_ADVANCED_PREFERENCE_KEY"
@@ -32,12 +32,12 @@
             android:visibility="gone"
             app:fragment="im.vector.fragments.VectorSettingsNotificationsAdvancedFragment" />
 
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_NOTIFICATION_TROUBLESHOOT_PREFERENCE_KEY"
             android:title="@string/settings_notification_troubleshoot"
             app:fragment="im.vector.riotx.features.settings.VectorSettingsNotificationsTroubleshootFragment" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
 
     <!--im.vector.riotx.core.preference.VectorPreferenceCategory

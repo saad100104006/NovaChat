@@ -122,7 +122,7 @@
         android:tint="@color/white"
         tools:ignore="MissingConstraints" />
 
-    <im.vector.riotx.features.home.room.detail.composer.ComposerEditText
+    <im.vector.novaChat.features.home.room.detail.composer.ComposerEditText
         android:id="@+id/composerEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

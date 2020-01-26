@@ -6,7 +6,7 @@
     android:addStatesFromChildren="true"
     android:background="?attr/selectableItemBackground">
 
-    <im.vector.riotx.core.platform.CheckableView
+    <im.vector.novaChat.core.platform.CheckableView
         android:id="@+id/messageSelectedBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,7 +53,7 @@
 
     </FrameLayout>
 
-    <im.vector.riotx.core.ui.views.ReadReceiptsView
+    <im.vector.novaChat.core.ui.views.ReadReceiptsView
         android:id="@+id/readReceiptsView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
