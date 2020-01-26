@@ -20,7 +20,6 @@
         android:paddingRight="4dp"
         android:textColor="@android:color/white"
         android:textSize="10sp"
-        tools:background="@drawable/bg_unread_highlight"
         tools:text="4" />
 
 </FrameLayout>
