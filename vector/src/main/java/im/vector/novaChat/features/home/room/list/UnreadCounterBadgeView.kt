@@ -35,12 +35,12 @@ class UnreadCounterBadgeView : AppCompatTextView {
             visibility = View.INVISIBLE
         } else {
             visibility = View.VISIBLE
-            val bgRes = if (state.highlighted) {
+           /* val bgRes = if (state.highlighted) {
                 R.drawable.bg_unread_highlight
             } else {
                 ThemeUtils.getResourceId(context, R.drawable.bg_unread_notification_light)
-            }
-            setBackgroundResource(bgRes)
+            }*/
+         //   setBackgroundResource(bgRes)
             text = RoomSummaryFormatter.formatUnreadMessagesCounter(state.count)
         }
     }

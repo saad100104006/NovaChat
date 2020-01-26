@@ -86,7 +86,7 @@
         android:minHeight="16dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="15sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/roomNameView"

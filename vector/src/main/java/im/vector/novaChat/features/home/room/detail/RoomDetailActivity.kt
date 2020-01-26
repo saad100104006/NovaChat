@@ -75,7 +75,7 @@ class RoomDetailActivity : VectorBaseActivity(), ToolbarConfigurable {
 
             splash.visibility = View.GONE
             // close this activity
-        }, 300)
+        }, 1000)
     }
 
     private fun switchToRoom(switchToRoom: RoomDetailSharedAction.SwitchToRoom) {

@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
         android:elevation="4dp"
+        android:background="@color/black"
         android:transitionName="toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +58,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:background="@drawable/ic_dots"
                 />

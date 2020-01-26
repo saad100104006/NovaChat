@@ -18,7 +18,7 @@
         android:minHeight="8dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
         tools:text="4" />
 
