@@ -35,6 +35,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:gravity="start"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="8dp"
@@ -65,7 +67,9 @@
         android:id="@+id/messageStartGuideline"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout_marginStart="52dp" />
+        tools:layout_marginStart="52dp"
+        android:visibility="gone"
+        />
 
     <FrameLayout
         android:id="@+id/viewStubContainer"
