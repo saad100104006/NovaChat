@@ -19,6 +19,7 @@ package im.vector.novaChat.core.platform
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
 import android.os.Parcelable
 import android.view.Menu
 import android.view.MenuItem
@@ -72,6 +73,7 @@ import im.vector.novaChat.features.themes.ThemeUtils
 import im.vector.novaChat.receivers.DebugReceiver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import kotlinx.android.synthetic.main.activity_room_detail.*
 import timber.log.Timber
 import kotlin.system.measureTimeMillis
 
@@ -336,6 +338,16 @@ abstract class VectorBaseActivity : AppCompatActivity(), HasScreenInjector {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             onBackPressed(true)
+            if(splash!=null) {
+                splash.visibility = View.VISIBLE
+                Handler().postDelayed({
+                    // This method will be executed once the timer is over
+                    // Start your app main activity
+
+                    splash.visibility = View.GONE
+                    // close this activity
+                }, 300)
+            }
             return true
         }
 

@@ -28,6 +28,8 @@ class ScrollOnNewMessageCallback(private val layoutManager: LinearLayoutManager,
         Timber.v("On inserted $count count at position: $position")
         if (position == 0 && layoutManager.findFirstVisibleItemPosition() == 0 && !timelineEventController.isLoadingForward()) {
             layoutManager.scrollToPosition(0)
+        } else {
+            layoutManager.scrollToPosition(position+6)
         }
     }
 }

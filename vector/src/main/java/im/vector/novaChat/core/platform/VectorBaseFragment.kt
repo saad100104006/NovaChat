@@ -21,12 +21,14 @@ package im.vector.novaChat.core.platform
 import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
 import android.os.Parcelable
 import android.view.*
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.annotation.MainThread
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import butterknife.ButterKnife
@@ -35,6 +37,7 @@ import com.airbnb.mvrx.BaseMvRxFragment
 import com.airbnb.mvrx.MvRx
 import com.bumptech.glide.util.Util.assertMainThread
 import com.google.android.material.snackbar.Snackbar
+import im.vector.novaChat.R
 import im.vector.novaChat.core.di.DaggerScreenComponent
 import im.vector.novaChat.core.di.HasScreenInjector
 import im.vector.novaChat.core.di.ScreenComponent
@@ -42,6 +45,7 @@ import im.vector.novaChat.core.error.ErrorFormatter
 import im.vector.novaChat.features.navigation.Navigator
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import kotlinx.android.synthetic.main.fragment_room_detail.*
 import timber.log.Timber
 
 abstract class VectorBaseFragment : BaseMvRxFragment(), HasScreenInjector {
@@ -111,6 +115,7 @@ abstract class VectorBaseFragment : BaseMvRxFragment(), HasScreenInjector {
     @CallSuper
     override fun onResume() {
         super.onResume()
+
         Timber.i("onResume Fragment ${this.javaClass.simpleName}")
     }
 

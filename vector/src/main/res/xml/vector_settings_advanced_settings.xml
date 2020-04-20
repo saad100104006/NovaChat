@@ -57,12 +57,12 @@
         <im.vector.novaChat.core.preference.VectorPreference
             android:persistent="false"
             android:title="@string/settings_notifications_targets"
-            app:fragment="im.vector.riotx.features.settings.push.PushGatewaysFragment" />
+            app:fragment="im.vector.novaChat.features.settings.push.PushGatewaysFragment" />
 
         <im.vector.novaChat.core.preference.VectorPreference
             android:persistent="false"
             android:title="@string/settings_push_rules"
-            app:fragment="im.vector.riotx.features.settings.push.PushRulesFragment" />
+            app:fragment="im.vector.novaChat.features.settings.push.PushRulesFragment" />
 
     </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 

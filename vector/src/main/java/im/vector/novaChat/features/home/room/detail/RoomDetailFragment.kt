@@ -25,6 +25,7 @@ import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.os.Parcelable
 import android.text.Spannable
 import android.view.HapticFeedbackConstants
@@ -145,6 +146,7 @@ import im.vector.novaChat.features.themes.ThemeUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.synthetic.main.activity_vector_web_view.*
 import kotlinx.android.synthetic.main.fragment_room_detail.*
 import kotlinx.android.synthetic.main.merge_composer_layout.view.*
 import kotlinx.android.synthetic.main.merge_overlay_waiting_view.*
@@ -237,6 +239,7 @@ class RoomDetailFragment @Inject constructor(
         sharedActionViewModel = activityViewModelProvider.get(MessageSharedActionViewModel::class.java)
         attachmentsHelper = AttachmentsHelper.create(this, this).register()
         keyboardStateUtils = KeyboardStateUtils(requireActivity())
+
         setupToolbar(roomToolbar)
         setupRecyclerView()
         setupComposer()
@@ -527,9 +530,42 @@ class RoomDetailFragment @Inject constructor(
             it.dispatchTo(stateRestorer)
             it.dispatchTo(scrollOnNewMessageCallback)
             it.dispatchTo(scrollOnHighlightedEventCallback)
+            context?.let { ContextCompat.getColor(it,R.color.white) }?.let { rootConstraintLayout.setBackgroundColor(it) }
             updateJumpToReadMarkerViewVisibility()
             jumpToBottomViewVisibilityManager.maybeShowJumpToBottomViewVisibilityWithDelay()
         }
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                   // Log.d("scroll", "idle")
+                } else if (newState == RecyclerView.SCROLL_STATE_SETTLING) {
+                   // Log.d("scroll", "settling")
+                } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+                    shade.visibility = View.GONE
+                    Handler().postDelayed({
+                        // This method will be executed once the timer is over
+                        // Start your app main activity
+
+                        context?.let { ContextCompat.getColor(it,R.color.white) }?.let { rootConstraintLayout.setBackgroundColor(it) }
+
+                        shade.visibility = View.VISIBLE
+                        // close this activity
+                    }, 700)
+                   // Log.d("scroll", "dragging")
+                }
+
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                //Log.d("scroll", "scrolling")
+            }
+        })
+
         timelineEventController.addModelBuildListener(modelBuildListener)
         recyclerView.adapter = timelineEventController.adapter
 
@@ -1297,4 +1333,5 @@ class RoomDetailFragment @Inject constructor(
         val formattedContact = contactAttachment.toHumanReadable()
         roomDetailViewModel.handle(RoomDetailAction.SendMessage(formattedContact, false))
     }
+
 }

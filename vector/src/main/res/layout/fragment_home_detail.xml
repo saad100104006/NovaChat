@@ -8,6 +8,13 @@
     android:background="@color/black"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+
     <FrameLayout
         android:id="@+id/roomListContainer"
         android:layout_width="match_parent"
@@ -276,4 +283,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top" />
 
+    </RelativeLayout>
 </RelativeLayout>

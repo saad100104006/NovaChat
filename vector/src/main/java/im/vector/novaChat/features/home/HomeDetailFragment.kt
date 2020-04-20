@@ -17,8 +17,10 @@
 package im.vector.novaChat.features.home
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.core.view.forEachIndexed
 import androidx.lifecycle.Observer
 import com.airbnb.mvrx.fragmentViewModel
@@ -40,6 +42,9 @@ import im.vector.novaChat.features.home.room.list.UnreadCounterBadgeView
 import im.vector.novaChat.features.settings.VectorSettingsActivity
 import im.vector.novaChat.features.workers.signout.SignOutViewModel
 import kotlinx.android.synthetic.main.fragment_home_detail.*
+import kotlinx.android.synthetic.main.fragment_home_detail.settings_dot
+import kotlinx.android.synthetic.main.fragment_home_detail.syncStateView
+import kotlinx.android.synthetic.main.fragment_room_detail.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -192,6 +197,20 @@ class HomeDetailFragment @Inject constructor(
     }
 
     private fun updateSelectedFragment(displayMode: RoomListDisplayMode) {
+
+        background.visibility = View.GONE
+        Handler().postDelayed({
+            // This method will be executed once the timer is over
+            // Start your app main activity
+
+            context?.let { ContextCompat.getColor(it,R.color.white) }?.let { top_layout.setBackgroundColor(it) }
+
+            background.visibility = View.VISIBLE
+            // close this activity
+        }, 300)
+
+
+
         val fragmentTag = "FRAGMENT_TAG_${displayMode.name}"
         val fragmentToShow = childFragmentManager.findFragmentByTag(fragmentTag)
         childFragmentManager.commitTransactionNow {
