@@ -23,10 +23,10 @@
 
             <ImageView
                 android:id="@+id/groupToolbarAvatarImageView"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:contentDescription="@string/a11y_open_drawer"
-                tools:src="@tools:sample/avatars" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_drawer"
+                android:contentDescription="@string/a11y_open_drawer" />
 
             <im.vector.novaChat.core.platform.EllipsizingTextView
                 android:id="@+id/groupToolbarTitleView"
@@ -35,11 +35,24 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:ellipsize="end"
+                android:visibility="gone"
                 android:maxLines="1"
                 android:textColor="?riotx_text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="@tools:sample/lorem/random" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="?riotx_background"
+                app:itemIconSize="20dp"
+                app:labelVisibilityMode="unlabeled"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/home_bottom_navigation" />
 
         </LinearLayout>
 
@@ -68,19 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="?riotx_header_panel_background"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintTop_toBottomOf="@+id/homeKeysBackupBanner" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:background="?riotx_background"
-        app:itemIconSize="20dp"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/home_bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,9 +80,9 @@ class HomeDetailFragment @Inject constructor(
             bottomNavigationView.selectedItemId = it.displayMode.toMenuId()
         }
 
-        viewModel.selectSubscribe(this, HomeDetailViewState::groupSummary) { groupSummary ->
-            onGroupChange(groupSummary.orNull())
-        }
+    /*    viewModel.selectSubscribe(this, HomeDetailViewState::groupSummary) { groupSummary ->
+          //  onGroupChange(groupSummary.orNull())
+        }*/
         viewModel.selectSubscribe(this, HomeDetailViewState::displayMode) { displayMode ->
             switchDisplayMode(displayMode)
         }
