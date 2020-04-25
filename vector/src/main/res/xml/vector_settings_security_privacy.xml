@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- ************ Cryptography section ************ -->
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:key="SETTINGS_CRYPTOGRAPHY_PREFERENCE_KEY"
         android:title="@string/settings_cryptography">
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_ENCRYPTION_CROSS_SIGNING_PREFERENCE_KEY"
             android:persistent="false"
             android:title="@string/encryption_information_cross_signing_state"
@@ -28,69 +28,69 @@
         <!--            android:key="SETTINGS_ENCRYPTION_INFORMATION_DEVICE_KEY_PREFERENCE_KEY"-->
         <!--            android:title="@string/encryption_information_device_key" />-->
 
-        <im.vector.riotx.core.preference.VectorSwitchPreference
+        <im.vector.novaChat.core.preference.VectorSwitchPreference
             android:enabled="false"
             android:key="SETTINGS_ENCRYPTION_NEVER_SENT_TO_PREFERENCE_KEY"
             android:summary="@string/encryption_never_send_to_unverified_devices_summary"
             android:title="@string/encryption_never_send_to_unverified_devices_title" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
     <!-- devices list entry point -->
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:key="SETTINGS_DEVICES_LIST_PREFERENCE_KEY"
         android:title="@string/settings_active_sessions_list">
 
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_SHOW_DEVICES_LIST_PREFERENCE_KEY"
             android:title="@string/settings_active_sessions_show_all"
             app:fragment="im.vector.riotx.features.settings.devices.VectorSettingsDevicesFragment" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:key="SETTINGS_CRYPTOGRAPHY_MANAGE_PREFERENCE_KEY"
         android:title="@string/settings_cryptography_manage_keys">
 
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_SECURE_MESSAGE_RECOVERY_PREFERENCE_KEY"
             android:persistent="false"
             android:summary="@string/encryption_settings_manage_message_recovery_summary"
             android:title="@string/encryption_message_recovery" />
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_ENCRYPTION_EXPORT_E2E_ROOM_KEYS_PREFERENCE_KEY"
             android:summary="@string/encryption_export_room_keys_summary"
             android:title="@string/encryption_export_e2e_room_keys" />
 
-        <im.vector.riotx.core.preference.VectorPreference
+        <im.vector.novaChat.core.preference.VectorPreference
             android:key="SETTINGS_ENCRYPTION_IMPORT_E2E_ROOM_KEYS_PREFERENCE_KEY"
             android:summary="@string/encryption_import_room_keys_summary"
             android:title="@string/encryption_import_e2e_room_keys" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:key="SETTINGS_ANALYTICS_PREFERENCE_KEY"
         android:title="@string/settings_analytics"
         app:isPreferenceVisible="@bool/false_not_implemented">
 
-        <im.vector.riotx.core.preference.VectorSwitchPreference
+        <im.vector.novaChat.core.preference.VectorSwitchPreference
             android:defaultValue="false"
             android:key="SETTINGS_USE_ANALYTICS_KEY"
             android:summary="@string/settings_opt_in_of_analytics_summary"
             android:title="@string/settings_opt_in_of_analytics" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
-    <im.vector.riotx.core.preference.VectorPreferenceCategory
+    <im.vector.novaChat.core.preference.VectorPreferenceCategory
         android:title="@string/settings_other">
 
-        <im.vector.riotx.core.preference.VectorSwitchPreference
+        <im.vector.novaChat.core.preference.VectorSwitchPreference
             android:defaultValue="false"
             android:key="SETTINGS_SECURITY_USE_FLAG_SECURE"
             android:summary="@string/settings_security_prevent_screenshots_summary"
             android:title="@string/settings_security_prevent_screenshots_title" />
 
-    </im.vector.riotx.core.preference.VectorPreferenceCategory>
+    </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

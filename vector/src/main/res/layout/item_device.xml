@@ -55,7 +55,7 @@
             android:textColor="?riotx_text_secondary"
             android:textSize="12sp" />
 
-        <im.vector.riotx.core.platform.EllipsizingTextView
+        <im.vector.novaChat.core.platform.EllipsizingTextView
             android:id="@+id/itemDeviceId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

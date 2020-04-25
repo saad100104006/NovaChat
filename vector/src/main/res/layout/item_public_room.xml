@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
-    <im.vector.riotx.core.platform.EllipsizingTextView
+    <im.vector.novaChat.core.platform.EllipsizingTextView
         android:id="@+id/itemPublicRoomName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         app:layout_constraintStart_toEndOf="@+id/itemPublicRoomMembersCount"
         tools:text="@sample/matrix.json/data/roomAlias" />
 
-    <im.vector.riotx.core.platform.ButtonStateView
+    <im.vector.novaChat.core.platform.ButtonStateView
         android:id="@+id/itemPublicRoomButtonState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

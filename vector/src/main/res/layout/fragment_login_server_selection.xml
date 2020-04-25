@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginServerTitle" />
 
-            <im.vector.riotx.core.platform.CheckableConstraintLayout
+            <im.vector.novaChat.core.platform.CheckableConstraintLayout
                 android:id="@+id/loginServerChoiceMatrixOrg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,9 +79,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/loginServerChoiceMatrixOrgIcon" />
 
-            </im.vector.riotx.core.platform.CheckableConstraintLayout>
+            </im.vector.novaChat.core.platform.CheckableConstraintLayout>
 
-            <im.vector.riotx.core.platform.CheckableConstraintLayout
+            <im.vector.novaChat.core.platform.CheckableConstraintLayout
                 android:id="@+id/loginServerChoiceModular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,9 +131,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/loginServerChoiceModularText" />
 
-            </im.vector.riotx.core.platform.CheckableConstraintLayout>
+            </im.vector.novaChat.core.platform.CheckableConstraintLayout>
 
-            <im.vector.riotx.core.platform.CheckableConstraintLayout
+            <im.vector.novaChat.core.platform.CheckableConstraintLayout
                 android:id="@+id/loginServerChoiceOther"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/loginServerChoiceOtherTitle" />
 
-            </im.vector.riotx.core.platform.CheckableConstraintLayout>
+            </im.vector.novaChat.core.platform.CheckableConstraintLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginServerSubmit"

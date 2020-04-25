@@ -17,7 +17,7 @@
     android:paddingRight="@dimen/layout_horizontal_margin"
     android:paddingBottom="8dp">
 
-    <im.vector.riotx.core.platform.EllipsizingTextView
+    <im.vector.novaChat.core.platform.EllipsizingTextView
         android:id="@+id/roomCategoryTitleView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:textSize="14sp"
         tools:text="@string/room_participants_header_direct_chats" />
 
-    <im.vector.riotx.features.home.room.list.UnreadCounterBadgeView
+    <im.vector.novaChat.features.home.room.list.UnreadCounterBadgeView
         android:id="@+id/roomCategoryUnreadCounterBadgeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

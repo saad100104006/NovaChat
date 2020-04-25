@@ -43,7 +43,7 @@
                 tools:ignore="MissingConstraints"
                 tools:src="@drawable/ic_shield_trusted" />
 
-            <im.vector.riotx.core.platform.EllipsizingTextView
+            <im.vector.novaChat.core.platform.EllipsizingTextView
                 android:id="@+id/roomToolbarTitleView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@sample/matrix.json/data/roomName" />
 
-            <im.vector.riotx.core.platform.EllipsizingTextView
+            <im.vector.novaChat.core.platform.EllipsizingTextView
                 android:id="@+id/roomToolbarSubtitleView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:barrierDirection="top"
         app:constraint_referenced_ids="composerLayout,notificationAreaView" />
 
-    <im.vector.riotx.features.sync.widget.SyncStateView
+    <im.vector.novaChat.features.sync.widget.SyncStateView
         android:id="@+id/syncStateView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@id/syncStateView"
         tools:listitem="@layout/item_timeline_event_base" />
 
-    <im.vector.riotx.core.ui.views.JumpToReadMarkerView
+    <im.vector.novaChat.core.ui.views.JumpToReadMarkerView
         android:id="@+id/jumpToReadMarkerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@id/syncStateView"
         tools:visibility="visible" />
 
-    <im.vector.riotx.core.ui.views.NotificationAreaView
+    <im.vector.novaChat.core.ui.views.NotificationAreaView
         android:id="@+id/notificationAreaView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <im.vector.riotx.features.home.room.detail.composer.TextComposerView
+    <im.vector.novaChat.features.home.room.detail.composer.TextComposerView
         android:id="@+id/composerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <im.vector.riotx.features.invite.VectorInviteView
+    <im.vector.novaChat.features.invite.VectorInviteView
         android:id="@+id/inviteView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
         app:layout_constraintTop_toBottomOf="@+id/roomToolbar"
         tools:visibility="visible" />
 
-    <im.vector.riotx.core.platform.BadgeFloatingActionButton
+    <im.vector.novaChat.core.platform.BadgeFloatingActionButton
         android:id="@+id/jumpToBottomView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

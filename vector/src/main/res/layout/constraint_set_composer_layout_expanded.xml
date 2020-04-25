@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/first_names" />
 
-    <im.vector.riotx.core.platform.EllipsizingTextView
+    <im.vector.novaChat.core.platform.EllipsizingTextView
         android:id="@+id/composer_related_message_preview"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -166,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@id/composer_preview_barrier"
         app:layout_constraintVertical_bias="1" />
 
-    <im.vector.riotx.features.home.room.detail.composer.ComposerEditText
+    <im.vector.novaChat.features.home.room.detail.composer.ComposerEditText
         android:id="@+id/composerEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

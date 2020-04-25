@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="im.vector.riotx">
+    package="im.vector.novaChat">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -20,7 +20,7 @@
         android:required="false" />
 
     <application
-        android:name=".VectorApplication"
+        android:name="im.vector.novaChat.VectorApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,13 +31,13 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".features.MainActivity"
+            android:name="im.vector.novaChat.features.MainActivity"
             android:theme="@style/AppTheme.Launcher" />
 
         <!-- Activity alias for the launcher Activity (must be declared after the Activity it targets) -->
         <activity-alias
             android:name=".features.Alias"
-            android:targetActivity=".features.MainActivity">
+            android:targetActivity="im.vector.novaChat.features.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,48 +45,48 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".features.home.HomeActivity" />
+        <activity android:name="im.vector.novaChat.features.home.HomeActivity" />
         <activity
-            android:name=".features.login.LoginActivity"
+            android:name="im.vector.novaChat.features.login.LoginActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".features.media.ImageMediaViewerActivity" />
-        <activity android:name=".features.media.BigImageViewerActivity" />
+        <activity android:name="im.vector.novaChat.features.media.ImageMediaViewerActivity" />
+        <activity android:name="im.vector.novaChat.features.media.BigImageViewerActivity" />
         <activity
-            android:name=".features.rageshake.BugReportActivity"
+            android:name="im.vector.novaChat.features.rageshake.BugReportActivity"
             android:label="@string/title_activity_bug_report" />
         <activity
-            android:name=".features.settings.VectorSettingsActivity"
+            android:name="im.vector.novaChat.features.settings.VectorSettingsActivity"
             android:label="@string/title_activity_settings"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".features.media.VideoMediaViewerActivity" />
+        <activity android:name="im.vector.novaChat.features.media.VideoMediaViewerActivity" />
         <activity
-            android:name=".features.crypto.keysbackup.restore.KeysBackupRestoreActivity"
+            android:name="im.vector.novaChat.features.crypto.keysbackup.restore.KeysBackupRestoreActivity"
             android:label="@string/title_activity_keys_backup_setup" />
         <activity
-            android:name=".features.crypto.keysbackup.setup.KeysBackupSetupActivity"
+            android:name="im.vector.novaChat.features.crypto.keysbackup.setup.KeysBackupSetupActivity"
             android:label="@string/title_activity_keys_backup_restore" />
         <activity
-            android:name=".features.crypto.keysbackup.settings.KeysBackupManageActivity"
+            android:name="im.vector.novaChat.features.crypto.keysbackup.settings.KeysBackupManageActivity"
             android:label="@string/encryption_message_recovery" />
 
         <activity
-            android:name=".features.reactions.EmojiReactionPickerActivity"
+            android:name="im.vector.novaChat.features.reactions.EmojiReactionPickerActivity"
             android:label="@string/title_activity_emoji_reaction_picker" />
-        <activity android:name=".features.roomdirectory.createroom.CreateRoomActivity" />
-        <activity android:name=".features.roomdirectory.RoomDirectoryActivity" />
-        <activity android:name=".features.roomdirectory.roompreview.RoomPreviewActivity" />
-        <activity android:name=".features.home.room.filtered.FilteredRoomsActivity" />
+        <activity android:name="im.vector.novaChat.features.roomdirectory.createroom.CreateRoomActivity" />
+        <activity android:name="im.vector.novaChat.features.roomdirectory.RoomDirectoryActivity" />
+        <activity android:name="im.vector.novaChat.features.roomdirectory.roompreview.RoomPreviewActivity" />
+        <activity android:name="im.vector.novaChat.features.home.room.filtered.FilteredRoomsActivity" />
         <activity
-            android:name=".features.home.room.detail.RoomDetailActivity"
-            android:parentActivityName=".features.home.HomeActivity">
+            android:name="im.vector.novaChat.features.home.room.detail.RoomDetailActivity"
+            android:parentActivityName="im.vector.novaChat.features.home.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".features.home.HomeActivity" />
+                android:value="im.vector.novaChat.features.home.HomeActivity" />
         </activity>
-        <activity android:name=".features.debug.DebugMenuActivity" />
-        <activity android:name="im.vector.riotx.features.createdirect.CreateDirectRoomActivity" />
-        <activity android:name=".features.webview.VectorWebViewActivity" />
-        <activity android:name=".features.link.LinkHandlerActivity">
+        <activity android:name="im.vector.novaChat.features.debug.DebugMenuActivity" />
+        <activity android:name="im.vector.novaChat.features.createdirect.CreateDirectRoomActivity" />
+        <activity android:name="im.vector.novaChat.features.webview.VectorWebViewActivity" />
+        <activity android:name="im.vector.novaChat.features.link.LinkHandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -100,11 +100,11 @@
         </activity>
 
         <activity
-            android:name=".features.share.IncomingShareActivity"
-            android:parentActivityName=".features.home.HomeActivity">
+            android:name="im.vector.novaChat.features.share.IncomingShareActivity"
+            android:parentActivityName="im.vector.novaChat.features.home.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".features.home.HomeActivity" />
+                android:value="im.vector.novaChat.features.home.HomeActivity" />
 
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -122,13 +122,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".features.roomprofile.RoomProfileActivity" />
+        <activity android:name="im.vector.novaChat.features.roomprofile.RoomProfileActivity" />
 
-        <activity android:name=".features.signout.hard.SignedOutActivity" />
+        <activity android:name="im.vector.novaChat.features.signout.hard.SignedOutActivity" />
         <activity
-            android:name=".features.signout.soft.SoftLogoutActivity"
+            android:name="im.vector.novaChat.features.signout.soft.SoftLogoutActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".features.permalink.PermalinkHandlerActivity">
+        <activity android:name="im.vector.novaChat.features.permalink.PermalinkHandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -142,39 +142,39 @@
         </activity>
 
         <activity
-            android:name=".features.roommemberprofile.RoomMemberProfileActivity"
-            android:parentActivityName=".features.home.HomeActivity">
+            android:name="im.vector.novaChat.features.roommemberprofile.RoomMemberProfileActivity"
+            android:parentActivityName="im.vector.novaChat.features.home.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".features.home.HomeActivity" />
+                android:value="im.vector.novaChat.features.home.HomeActivity" />
         </activity>
 
-        <activity android:name=".features.qrcode.QrCodeScannerActivity" />
+        <activity android:name="im.vector.novaChat.features.qrcode.QrCodeScannerActivity" />
 
-        <activity android:name=".features.crypto.quads.SharedSecureStorageActivity" />
+        <activity android:name="im.vector.novaChat.features.crypto.quads.SharedSecureStorageActivity" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".features.attachments.preview.AttachmentsPreviewActivity"
+            android:name="im.vector.novaChat.features.attachments.preview.AttachmentsPreviewActivity"
             android:theme="@style/AppTheme.AttachmentsPreview" />
 
         <!-- Services -->
 
         <service
-            android:name=".core.services.CallService"
+            android:name="im.vector.novaChat.core.services.CallService"
             android:exported="false" />
 
         <service
-            android:name=".core.services.VectorSyncService"
+            android:name="im.vector.novaChat.core.services.VectorSyncService"
             android:exported="false" />
 
         <!-- Receivers -->
 
         <!-- Exported false, should only be accessible from this app!! -->
         <receiver
-            android:name=".features.notifications.NotificationBroadcastReceiver"
+            android:name="im.vector.novaChat.features.notifications.NotificationBroadcastReceiver"
             android:enabled="true"
             android:exported="false" />
 

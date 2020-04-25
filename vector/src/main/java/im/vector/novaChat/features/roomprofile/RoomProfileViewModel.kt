@@ -1,0 +1,99 @@
+/*
+ * Copyright 2019 New Vector Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+package im.vector.novaChat.features.roomprofile
+
+import com.airbnb.mvrx.FragmentViewModelContext
+import com.airbnb.mvrx.MvRxViewModelFactory
+import com.airbnb.mvrx.ViewModelContext
+import com.squareup.inject.assisted.Assisted
+import com.squareup.inject.assisted.AssistedInject
+import im.vector.matrix.android.api.MatrixCallback
+import im.vector.matrix.android.api.permalinks.PermalinkFactory
+import im.vector.matrix.android.api.session.Session
+import im.vector.matrix.rx.rx
+import im.vector.matrix.rx.unwrap
+import im.vector.novaChat.R
+import im.vector.novaChat.core.platform.VectorViewModel
+import im.vector.novaChat.core.resources.StringProvider
+
+class RoomProfileViewModel @AssistedInject constructor(@Assisted private val initialState: RoomProfileViewState,
+                                                       private val stringProvider: StringProvider,
+                                                       private val session: Session)
+    : VectorViewModel<RoomProfileViewState, RoomProfileAction, RoomProfileViewEvents>(initialState) {
+
+    @AssistedInject.Factory
+    interface Factory {
+        fun create(initialState: RoomProfileViewState): RoomProfileViewModel
+    }
+
+    companion object : MvRxViewModelFactory<RoomProfileViewModel, RoomProfileViewState> {
+
+        @JvmStatic
+        override fun create(viewModelContext: ViewModelContext, state: RoomProfileViewState): RoomProfileViewModel? {
+            val fragment: RoomProfileFragment = (viewModelContext as FragmentViewModelContext).fragment()
+            return fragment.roomProfileViewModelFactory.create(state)
+        }
+    }
+
+    private val room = session.getRoom(initialState.roomId)!!
+
+    init {
+        observeRoomSummary()
+    }
+
+    private fun observeRoomSummary() {
+        room.rx().liveRoomSummary()
+                .unwrap()
+                .execute {
+                    copy(roomSummary = it)
+                }
+    }
+
+    override fun handle(action: RoomProfileAction) = when (action) {
+        RoomProfileAction.LeaveRoom                      -> handleLeaveRoom()
+        is RoomProfileAction.ChangeRoomNotificationState -> handleChangeNotificationMode(action)
+        is RoomProfileAction.ShareRoomProfile            -> handleShareRoomProfile()
+    }
+
+    private fun handleChangeNotificationMode(action: RoomProfileAction.ChangeRoomNotificationState) {
+        room.setRoomNotificationState(action.notificationState, object : MatrixCallback<Unit> {
+            override fun onFailure(failure: Throwable) {
+                _viewEvents.post(RoomProfileViewEvents.Failure(failure))
+            }
+        })
+    }
+
+    private fun handleLeaveRoom() {
+        _viewEvents.post(RoomProfileViewEvents.Loading(stringProvider.getString(R.string.room_profile_leaving_room)))
+        room.leave(null, object : MatrixCallback<Unit> {
+            override fun onSuccess(data: Unit) {
+                _viewEvents.post(RoomProfileViewEvents.OnLeaveRoomSuccess)
+            }
+
+            override fun onFailure(failure: Throwable) {
+                _viewEvents.post(RoomProfileViewEvents.Failure(failure))
+            }
+        })
+    }
+
+    private fun handleShareRoomProfile() {
+        PermalinkFactory.createPermalink(initialState.roomId)?.let { permalink ->
+            _viewEvents.post(RoomProfileViewEvents.ShareRoomProfile(permalink))
+        }
+    }
+}

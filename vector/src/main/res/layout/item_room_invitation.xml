@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/roomInvitationAvatarImageView"
         tools:layout_marginStart="20dp" />
 
-    <im.vector.riotx.core.platform.EllipsizingTextView
+    <im.vector.novaChat.core.platform.EllipsizingTextView
         android:id="@+id/roomInvitationNameView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@sample/matrix.json/data/displayName" />
 
-    <im.vector.riotx.core.platform.EllipsizingTextView
+    <im.vector.novaChat.core.platform.EllipsizingTextView
         android:id="@+id/roomInvitationSubTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/roomInvitationSubTitle"
         tools:layout_marginStart="120dp" />
 
-    <im.vector.riotx.core.platform.ButtonStateView
+    <im.vector.novaChat.core.platform.ButtonStateView
         android:id="@+id/roomInvitationAccept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="@+id/roomInvitationNameView"
         app:layout_constraintTop_toBottomOf="@+id/roomLastEventBottomSpace" />
 
-    <im.vector.riotx.core.platform.ButtonStateView
+    <im.vector.novaChat.core.platform.ButtonStateView
         android:id="@+id/roomInvitationReject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

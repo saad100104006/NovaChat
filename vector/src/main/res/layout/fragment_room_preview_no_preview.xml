@@ -33,7 +33,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:src="@tools:sample/avatars" />
 
-                <im.vector.riotx.core.platform.EllipsizingTextView
+                <im.vector.novaChat.core.platform.EllipsizingTextView
                     android:id="@+id/roomPreviewNoPreviewToolbarTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                     tools:text="Error"
                     tools:visibility="visible" />
 
-                <im.vector.riotx.core.platform.ButtonStateView
+                <im.vector.novaChat.core.platform.ButtonStateView
                     android:id="@+id/roomPreviewNoPreviewJoin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -28,7 +28,7 @@
                 android:contentDescription="@string/a11y_open_drawer"
                 tools:src="@tools:sample/avatars" />
 
-            <im.vector.riotx.core.platform.EllipsizingTextView
+            <im.vector.novaChat.core.platform.EllipsizingTextView
                 android:id="@+id/groupToolbarTitleView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <im.vector.riotx.features.sync.widget.SyncStateView
+    <im.vector.novaChat.features.sync.widget.SyncStateView
         android:id="@+id/syncStateView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/groupToolbar" />
 
-    <im.vector.riotx.core.ui.views.KeysBackupBanner
+    <im.vector.novaChat.core.ui.views.KeysBackupBanner
         android:id="@+id/homeKeysBackupBanner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
