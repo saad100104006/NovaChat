@@ -103,7 +103,7 @@
             android:key="SETTINGS_DEACTIVATE_ACCOUNT_KEY"
             android:persistent="false"
             android:title="@string/settings_deactivate_my_account"
-            app:fragment="im.vector.riotx.features.settings.account.deactivation.DeactivateAccountFragment" />
+            app:fragment="im.vector.novaChat.features.settings.account.deactivation.DeactivateAccountFragment" />
 
     </im.vector.novaChat.core.preference.VectorPreferenceCategory>
 
