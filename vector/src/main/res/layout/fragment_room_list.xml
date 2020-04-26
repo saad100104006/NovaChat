@@ -5,6 +5,7 @@
     android:id="@+id/stateView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="-40dp"
     android:background="?riotx_header_panel_background">
 
     <androidx.recyclerview.widget.RecyclerView
