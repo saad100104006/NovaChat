@@ -16,6 +16,8 @@
     <item
         android:id="@+id/menu_home_filter"
         android:icon="@drawable/ic_search"
+        android:iconTint="@color/white"
+        android:iconTintMode="src_in"
         android:title="@string/home_filter_placeholder_home"
         app:showAsAction="always" />
 

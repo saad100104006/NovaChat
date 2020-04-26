@@ -5,8 +5,8 @@
 
     <style name="AppTheme.Base.Dark" parent="Theme.MaterialComponents.NoActionBar.Bridge">
         <!-- Riotx attribute for palette -->
-        <item name="riotx_background">@color/riotx_background_dark</item>
-        <item name="riotx_base">@color/riotx_base_dark</item>
+        <item name="riotx_background">@color/riotx_header_panel_background_black</item>
+        <item name="riotx_base">@color/riotx_room_highlight_black</item>
         <item name="riotx_base_text_icon_primary">@color/riotx_base_text_icon_primary_dark</item>
         <item name="riotx_base_text_icon_secondary">@color/riotx_base_text_icon_secondary_dark</item>
         <item name="riotx_search_background_mobile">@color/riotx_search_background_mobile_dark</item>
@@ -20,7 +20,7 @@
         <item name="riotx_search_placeholder">@color/riotx_search_placeholder_dark</item>
         <item name="riotx_room_highlight">@color/riotx_room_highlight_dark</item>
         <item name="riotx_unread_room_indent">@color/riotx_unread_room_indent_dark</item>
-        <item name="riotx_android_status_bar">@color/riotx_android_status_bar_dark</item>
+        <item name="riotx_android_status_bar">@color/riotx_header_panel_text_primary_dark</item>
         <item name="riotx_line_break_mobile">@color/riotx_line_break_mobile_dark</item>
         <item name="riotx_unread_room_badge">@color/riotx_unread_room_badge_dark</item>
         <item name="riotx_fab_secondary_bg">@color/riotx_fab_secondary_bg_dark</item>
@@ -38,7 +38,7 @@
 
         <!-- Material color: Note: this block should be the same in all theme because it references only common colors and ?riotx attributes -->
         <item name="colorPrimary">@color/riotx_accent</item>
-        <item name="colorPrimaryVariant">@color/primary_color_dark_light</item>
+        <item name="colorPrimaryVariant">#E91E63</item>
         <item name="colorOnPrimary">@color/riotx_text_primary_light</item>
         <!-- We do not use color secondary, default will be colorPrimary values: It does not work so declare again the value -->
         <item name="colorSecondary">@color/riotx_accent</item>
@@ -64,8 +64,8 @@
         <item name="android:actionMenuTextColor">?colorAccent</item>
 
         <!-- default background color -->
-        <item name="vctr_bottom_nav_background_color">@color/primary_color_dark</item>
-        <item name="vctr_bottom_nav_background_border_color">#FF15171b</item>
+        <item name="vctr_bottom_nav_background_color">@color/primary_color_light</item>
+        <item name="vctr_bottom_nav_background_border_color">#3473F1</item>
 
         <!-- waiting view background -->
         <item name="vctr_waiting_background_color">#55555555</item>
@@ -79,8 +79,8 @@
         <!-- application bar text hint color -->
         <item name="vctr_primary_hint_text_color">@color/primary_hint_text_color_dark</item>
 
-        <item name="vctr_tab_home">@color/primary_color_dark</item>
-        <item name="vctr_tab_home_secondary">@color/primary_color_dark_dark</item>
+        <item name="vctr_tab_home">@color/vector_fuchsia_color</item>
+        <item name="vctr_tab_home_secondary">@color/tab_rooms_secondary</item>
 
         <!-- default text colors -->
         <item name="vctr_default_text_hint_color">@color/default_text_hint_color_dark</item>
@@ -98,7 +98,7 @@
         <item name="vctr_highlighted_searched_message_text_color">@color/primary_color_light</item>
         <item name="vctr_search_mode_room_name_text_color">#CCC3C3C3</item>
         <item name="vctr_unread_marker_line_color">@color/accent_color_dark</item>
-        <item name="vctr_markdown_block_background_color">@android:color/black</item>
+        <item name="vctr_markdown_block_background_color">@android:color/holo_blue_light</item>
         <item name="vctr_spoiler_background_color">#FFFFFFFF</item>
         <item name="vctr_room_activity_divider_color">#565656</item>
 
