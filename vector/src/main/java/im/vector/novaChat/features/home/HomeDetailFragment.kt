@@ -196,8 +196,30 @@ class HomeDetailFragment @Inject constructor(
         }
     }
 
+  /*  private fun switchDisplayMode(displayMode: RoomListDisplayMode) {
+        groupToolbarTitleView.setText(displayMode.titleRes)
+        updateSelectedFragment(displayMode)
+    }*/
+
     private fun switchDisplayMode(displayMode: RoomListDisplayMode) {
         groupToolbarTitleView.setText(displayMode.titleRes)
+
+        if (displayMode == RoomListDisplayMode.PEOPLE) {
+            R.id.bottom_action_people
+            one.visibility=View.VISIBLE
+            two.visibility = View.INVISIBLE
+        }
+        else if (displayMode == RoomListDisplayMode.ROOMS) {
+            R.id.bottom_action_rooms
+            one.visibility=View.INVISIBLE
+            two.visibility=View.VISIBLE
+
+        }   else if (displayMode == RoomListDisplayMode.HOME) {
+            R.id.home
+            one.visibility=View.INVISIBLE
+            two.visibility=View.INVISIBLE
+
+        }
         updateSelectedFragment(displayMode)
     }
 
