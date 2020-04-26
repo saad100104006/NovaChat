@@ -98,7 +98,7 @@
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/option_send_files"
         android:src="@drawable/ic_attachment"
-        android:tint="?attr/colorAccent"
+        android:tint="#808d97"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -118,7 +118,7 @@
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/send"
         android:src="@drawable/ic_send"
-        android:tint="?attr/colorAccent"
+        android:tint="#808d97"
         tools:ignore="MissingConstraints" />
 
     <im.vector.novaChat.features.home.room.detail.composer.ComposerEditText
