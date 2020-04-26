@@ -78,21 +78,21 @@ class RoomListFragment @Inject constructor(
 
     override fun getMenuRes() = R.menu.room_list
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_home_mark_all_as_read -> {
+          *//*  R.id.menu_home_mark_all_as_read -> {
                 roomListViewModel.handle(RoomListAction.MarkAllRoomsRead)
                 return true
-            }
+            }*//*
         }
 
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
-    override fun onPrepareOptionsMenu(menu: Menu) {
+  /*  override fun onPrepareOptionsMenu(menu: Menu) {
         menu.findItem(R.id.menu_home_mark_all_as_read).isVisible = hasUnreadRooms
         super.onPrepareOptionsMenu(menu)
-    }
+    }*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

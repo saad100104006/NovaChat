@@ -129,7 +129,7 @@
     <string name="bottom_action_home">Home</string>
     <string name="bottom_action_favourites">Favourites</string>
     <string name="bottom_action_people">People</string>
-    <string name="bottom_action_rooms">Rooms</string>
+    <string name="bottom_action_rooms">Groups</string>
     <string name="bottom_action_groups">Communities</string>
 
     <!-- Home screen -->
@@ -1663,7 +1663,7 @@ Not all features in Riot are implemented in RiotX yet. Main missing (and coming 
 • Widgets
 • …"</string>
 
-    <string name="bottom_action_people_x">Direct Messages</string>
+    <string name="bottom_action_people_x">Direct</string>
 
     <string name="send_file_step_idle">Waiting…</string>
     <string name="send_file_step_encrypting_thumbnail">Encrypting thumbnail…</string>

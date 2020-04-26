@@ -249,14 +249,14 @@ class HomeActivity : VectorBaseActivity(), ToolbarConfigurable {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_home_suggestion -> {
+           /* R.id.menu_home_suggestion -> {
                 bugReporter.openBugReportScreen(this, true)
                 return true
             }
             R.id.menu_home_report_bug -> {
                 bugReporter.openBugReportScreen(this, false)
                 return true
-            }
+            }*/
             R.id.menu_home_filter     -> {
                 navigator.openRoomsFiltering(this)
                 return true

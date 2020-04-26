@@ -48,9 +48,8 @@ import kotlinx.android.synthetic.main.fragment_home_detail.*
 import timber.log.Timber
 import javax.inject.Inject
 
-private const val INDEX_CATCHUP = 0
-private const val INDEX_PEOPLE = 1
-private const val INDEX_ROOMS = 2
+private const val INDEX_PEOPLE = 0
+private const val INDEX_ROOMS = 1
 
 class HomeDetailFragment @Inject constructor(
         val homeDetailViewModelFactory: HomeDetailViewModel.Factory,
@@ -174,9 +173,10 @@ class HomeDetailFragment @Inject constructor(
         bottomNavigationView.setOnNavigationItemSelectedListener {
             val displayMode = when (it.itemId) {
                 R.id.bottom_action_people -> RoomListDisplayMode.PEOPLE
-                R.id.bottom_action_rooms  -> RoomListDisplayMode.ROOMS
-                else                      -> RoomListDisplayMode.HOME
+                else  -> RoomListDisplayMode.ROOMS
+               // else                      -> RoomListDisplayMode.HOME
             }
+
             viewModel.handle(HomeDetailAction.SwitchDisplayMode(displayMode))
             true
         }
@@ -188,6 +188,11 @@ class HomeDetailFragment @Inject constructor(
             val unreadCounterBadgeView: UnreadCounterBadgeView = badgeLayout.findViewById(R.id.actionUnreadCounterBadgeView)
             itemView.addView(badgeLayout)
             unreadCounterBadgeViews.add(index, unreadCounterBadgeView)
+        }
+
+        home.setOnClickListener{
+            viewModel.handle(HomeDetailAction.SwitchDisplayMode(RoomListDisplayMode.HOME))
+
         }
     }
 
@@ -228,7 +233,7 @@ class HomeDetailFragment @Inject constructor(
 
     override fun invalidate() = withState(viewModel) {
         Timber.v(it.toString())
-        unreadCounterBadgeViews[INDEX_CATCHUP].render(UnreadCounterBadgeView.State(it.notificationCountCatchup, it.notificationHighlightCatchup))
+       // unreadCounterBadgeViews[INDEX_CATCHUP].render(UnreadCounterBadgeView.State(it.notificationCountCatchup, it.notificationHighlightCatchup))
         unreadCounterBadgeViews[INDEX_PEOPLE].render(UnreadCounterBadgeView.State(it.notificationCountPeople, it.notificationHighlightPeople))
         unreadCounterBadgeViews[INDEX_ROOMS].render(UnreadCounterBadgeView.State(it.notificationCountRooms, it.notificationHighlightRooms))
         syncStateView.render(it.syncState)
@@ -236,7 +241,7 @@ class HomeDetailFragment @Inject constructor(
 
     private fun RoomListDisplayMode.toMenuId() = when (this) {
         RoomListDisplayMode.PEOPLE -> R.id.bottom_action_people
-        RoomListDisplayMode.ROOMS  -> R.id.bottom_action_rooms
-        else                       -> R.id.bottom_action_home
+        RoomListDisplayMode.ROOMS -> R.id.bottom_action_rooms
+          else                -> R.id.home
     }
 }
